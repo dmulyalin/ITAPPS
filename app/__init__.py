@@ -23,3 +23,6 @@ app.register_blueprint(home_blueprint)
 
 from .devices import devices as devices_blueprint
 app.register_blueprint(devices_blueprint)
+
+from .tools_import import tools_import as tools_import_blueprint
+app.register_blueprint(tools_import_blueprint)

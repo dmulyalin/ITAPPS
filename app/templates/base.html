@@ -21,7 +21,6 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="#">Link(TBD)</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Companies<span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -56,6 +55,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Switching<span class="caret"></span></a>
           <ul class="dropdown-menu">
+            <li><a href="#">L2 Domains</a></li>
             <li><a href="#">Vlans</a></li>
             <li><a href="#">Vxlan</a></li>
             <li><a href="#">VPLS</a></li>
@@ -66,11 +66,8 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Routing<span class="caret"></span></a>
           <ul class="dropdown-menu">
+            <li><a href="#">L3 Domains</a></li>
             <li><a href="#">VRF</a></li>
-            <li><a href="#">Vxlan</a></li>
-            <li><a href="#">VPLS</a></li>
-            <li><a href="#">PWE</a></li>
-            <li><a href="#">EVPN</a></li>
           </ul>
         </li>
       </ul>
@@ -81,6 +78,13 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tools<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="{{ url_for('tools_import.tools_import') }}">Import</a></li>
+            <li><a href="#">TTP Parser</a></li>
+          </ul>
+        </li>
         <li><a href="#">Logout</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->

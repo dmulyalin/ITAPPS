@@ -23,8 +23,7 @@
                 <tr>
                   <th width="15%"> Hostname </th>
                   <th width="40%"> Description </th>
-                  <th width="15%"> Edit </th>
-                  <th width="15%"> Delete </th>
+                  <th width="15%"> Actions </th>
                 </tr>
               </thead>
               <tbody>
@@ -34,12 +33,10 @@
                   <td> {{ device.description }} </td>
                   <td>
                     <a href="{{ url_for('devices.edit_device', id=device.id) }}">
-                      <i class="fa fa-pencil"></i> Edit 
+                      <i class="fa fa-pencil"></i>
                     </a>
-                  </td>
-                  <td>
                     <a href="{{ url_for('devices.delete_device', id=device.id) }}">
-                      <i class="fa fa-trash"></i> Delete 
+                      <i class="fa fa-trash"></i> 
                     </a>
                   </td>
                 </tr>
