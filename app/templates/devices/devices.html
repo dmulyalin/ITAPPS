@@ -1,6 +1,15 @@
 {% import "bootstrap/utils.html" as utils %}
 {% extends "base.html" %}
 {% block title %}Devices{% endblock %}
+
+{% block page_controls %}
+<div class="container-fluid">
+  <div class="btn-group pull-right" style="margin-bottom: 10px;" role="group">
+    <button type="button" class="glyphicon glyphicon-plus btn" onclick="window.location.href = '{{ url_for('devices.add_device') }}'"></button>
+  </div>
+</div>
+{% endblock %}
+
 {% block app_content %}
 <div class="content-section">
   <div class="outer">

@@ -1,11 +1,17 @@
 {% extends 'bootstrap/base.html' %}
 
+{% block head %}
+{{super()}}
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+{% endblock %}
+
 {% block title %}
-    {% if title %}{{ title }} - Microblog{% else %}Welcome to Microblog{% endif %}
+    {% if title %}{{ title }}{% else %}ITAPPS{% endif %}
 {% endblock %}
 
 {% block navbar %}
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default" style="margin-bottom: 10px;">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -45,8 +51,6 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Devices<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="{{ url_for('devices.list_devices') }}">Devices</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="{{ url_for('devices.add_device') }}">Add Device</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -85,6 +89,7 @@
 {% endblock %}
 
 {% block content %}
+{% block page_controls %}{% endblock %}
     <div class="container">
         {% with messages = get_flashed_messages() %}
         {% if messages %}
