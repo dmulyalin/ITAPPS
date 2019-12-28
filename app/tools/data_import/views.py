@@ -3,7 +3,7 @@ from flask_login import login_required, current_user
 from py2neo import Graph, Node, Relationship, NodeMatcher
 
 from . import tools_import
-from .forms import SampleForm
+from . forms import SampleForm
 
 # initiate graph
 graph = None
@@ -15,7 +15,7 @@ def get_graph():
     node_matcher = NodeMatcher(graph)
 
 @tools_import.route('/tools/import')
-# @login_required
+@login_required
 def tools_import():
     """
     Render the tools_import template 
