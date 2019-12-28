@@ -10,7 +10,6 @@ from flask_migrate import Migrate
 # local imports
 from config import app_config
 
-
 app = Flask(__name__, instance_relative_config=True)
 app.config.from_object(app_config['development'])
 app.config.from_pyfile('config.py')
@@ -39,3 +38,9 @@ app.register_blueprint(tools_import_blueprint)
 
 from .auth import auth as auth_blueprint
 app.register_blueprint(auth_blueprint)
+
+from .tools.ttp_parser import ttp_parser_dash_app
+ttp_parser_dash_app.init_app(app=app)
+
+from .api import api as api_blueprint
+app.register_blueprint(api_blueprint)
