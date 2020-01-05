@@ -2,6 +2,7 @@
 
 {% block head %}
 {{super()}}
+    <meta charset="utf-8">
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 {% endblock %}
@@ -31,9 +32,9 @@
           </ul>
         </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Locations<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Geo<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Sites</a></li>
+            <li><a href="{{ url_for('locations.locations') }}">Locations</a></li>
             <li><a href="#">Racks</a></li>
           </ul>
         </li>

@@ -44,3 +44,6 @@ ttp_parser_dash_app.init_app(app=app)
 
 from .api import api as api_blueprint
 app.register_blueprint(api_blueprint)
+
+from .locations import locations as locations_blueprint
+app.register_blueprint(locations_blueprint)

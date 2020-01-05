@@ -1,0 +1,50 @@
+{% import "bootstrap/utils.html" as utils %}
+{% extends "base.html" %}
+{% block title %}Locations{% endblock %}
+
+{% block head %}
+{{super()}}
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular-route.min.js"></script>
+<script>       
+var locationsApp = angular.module('locationsApp', []);
+  
+locationsApp.controller('LocationCtrl', function ($scope, $http){
+  $http.get('http://192.168.64.128:9000/api/locations', {
+      headers: {
+          "Authorization": "Bearer hmuWG750nIxTHEfTIjLtjviX6udcURR2"
+      }
+    }).success(function(response){
+      $scope.locations = response.data;
+  });
+});
+</script>
+{% endblock %}
+
+{% block page_controls %}
+{% endblock %}
+
+{% block app_content %}
+{% raw %}
+<div class="content-section" ng-app="locationsApp">
+  <div class="outer">
+    <div class="middle">
+      <div class="inner" ng-controller="LocationCtrl">
+        <div class="center">
+          <table class="table table-striped table-bordered">
+            <tr>
+              <th width="15%">Location</th>
+              <th width="15%">Postcode</th>
+            </tr>
+            <tr ng-repeat="location in locations">
+              <td>{{location.name}}</td>
+              <td>{{location.postcode}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endraw %}
+{% endblock %}
