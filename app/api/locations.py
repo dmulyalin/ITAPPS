@@ -28,15 +28,20 @@ def get_locations():
     # not defined. The per_page has additional logic that caps it at 100.
     page = request.args.get('page', 1, type=int)
     per_page = min(request.args.get('per_page', 10, type=int), 100)
+    brief = request.args.get('brief', False, type=bool)
     
     # get locations from database
     locations = []
-    locations_nodes = graph.run("MATCH (n:Location) RETURN n").data()
-    for location in locations_nodes:
-        for k, v in location.items():
-            datum = dict(v.items())
-            datum["id"] = v.identity
-            locations.append(datum)
+    if brief:
+        locations_nodes = graph.run("MATCH (n:Location) RETURN n.name as name, n.description as description, ID(n) as id").data()
+        locations = locations_nodes
+    else:
+        locations_nodes = graph.run("MATCH (n:Location) RETURN n").data()
+        for location in locations_nodes:
+            for k, v in location.items():
+                datum = dict(v.items())
+                datum["id"] = v.identity
+                locations.append(datum)
     return jsonify({
         "data": locations,
         "meta": {

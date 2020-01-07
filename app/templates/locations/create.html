@@ -1,0 +1,47 @@
+{% raw %}
+<h1>Add New Location</h1>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Labels</div>
+  <div class="panel-body">
+   <!-- Default labels -->
+   <div class="form-group" data-ng-repeat="label in form_data.labels.mandatory">
+     <div class="btn-group" role="group" aria-label="...">
+       <button type="button" class="btn btn-default disabled">{{label.labelName}}</button>
+     </div>
+   <!-- additional/optional labels -->
+     <span data-ng-repeat="label in form_data.labels.optional">
+     <div class="btn-group" role="group" aria-label="...">
+       <button type="button" class="btn btn-default disabled">{{label.labelName}}</button>
+       <button type="button" class="btn btn-default"> - </button>
+     </div>
+     </span>
+   </div>
+   <!-- add button -->
+   <div class="btn-group">
+     <div class="input-group col-md-7">
+       <input class="form-control" type="text" placeholder="Label Name">
+       <span class="input-group-btn">
+        <button class="btn btn-success" type="button" ng-click="addNewOptionalLabel()">Add</button>
+      </span>
+     </div>
+   </div>
+ </div>
+</div>
+<!--
+<div class="container">
+  <div class="btn-group" style="margin-bottom: 10px;" role="group">
+   <fieldset  data-ng-repeat="label in form_data.labels.mandatory">
+      <select>
+         <option>{{label.labelName}}</option>
+      </select>
+      <input class="form-control" id="{{label.labelName}}" name="{{label.labelName}}" required="" type="text" value="">
+      <button type="button" class="btn btn-lg btn-primary" ng-show="$last" ng-click="removeChoice()">-</button>
+   </fieldset>
+ </div>
+</div>
+<div>
+ <button ng-click="addNewlabel()">Add label</button>
+</div>
+-->
+{% endraw %}
