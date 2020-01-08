@@ -18,11 +18,6 @@
 <!-- Angular Material style sheet -->
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">
 
-
-<!-- OLD imports
-<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular-route.min.js"></script>
--->
 <script type="text/javascript">       
 var locationsApp = angular.module('locationsApp', ['ngRoute', 'ngMaterial', 'ngMessages']);
 
@@ -66,7 +61,7 @@ locationsApp.factory('locations', function($http){
     get_location_create_form: function(callback){
       $http({
         method: 'GET',
-        url: 'http://192.168.64.128:9000/api/locations/create_form',
+        url: 'http://192.168.64.128:9000/api/locations/templates',
         headers: {"Authorization": "Bearer hmuWG750nIxTHEfTIjLtjviX6udcURR2"},
         cache: true
       }).then(callback);

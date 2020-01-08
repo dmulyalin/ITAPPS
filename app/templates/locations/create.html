@@ -78,6 +78,7 @@
               <div ng-switch-when="list">            
                 <md-chips ng-model="property.chips" readonly="false"
                   md-removable="true" md-enable-chip-edit="true"
+                  style="min-height:10px;"
                   placeholder="Add values" secondary-placeholder="+value"></md-chips>
               </div>         
               <div ng-switch-when="integer">            
@@ -86,6 +87,13 @@
                   <div ng-message="pattern">Please enter digit</div>
                 </div>
               </div>   
+              <div ng-switch-when="note" id="scrollTextArea">               
+                <textarea ng-model="property.propertyValue" md-select-on-focus
+                          style="max-height:100px; 
+                                 min-height:10px; 
+                                 overflow-y: scroll;" 
+                          aria-label="Notes"></textarea>
+              </div>                
               <div ng-switch-default>
                 <input name="type" ng-model="property.propertyValue" placeholder="Value">
               </div>

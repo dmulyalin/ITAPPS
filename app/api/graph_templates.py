@@ -1,4 +1,4 @@
-location_create_form = {
+location_node_base = {
       "labels": {
           "mandatory": ["Location"], 
           "optional": []

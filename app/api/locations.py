@@ -5,7 +5,7 @@ from py2neo import Graph, Node, Relationship, NodeMatcher
 
 from . import api
 from . import errors
-from . import forms
+from . import graph_templates
 
 # initiate graph
 graph = None
@@ -90,6 +90,6 @@ def create_location():
         ret["Message"] = "location created successfully: {}".format(location_node["name"])
     return jsonify(ret)
     
-@api.route('/api/locations/create_form', methods=['GET'])
+@api.route('/api/locations/templates', methods=['GET'])
 def get_location_create_form():
-    return jsonify(forms.location_create_form)
+    return jsonify(graph_templates.location_node_base)
