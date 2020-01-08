@@ -3,10 +3,12 @@
   <div class="outer middle center">
     <table class="table table-striped table-bordered">
       <tr>
+        <th width="1%"></th>
         <th width="15%">Location</th>
         <th width="15%">Description</th>
       </tr>
       <tr ng-repeat="location in locations">
+        <td>O</td>
         <td> <a href="#!/{{location.id}}">{{location.name}}</a></td>
         <td>{{location.description}}</td>
       </tr>

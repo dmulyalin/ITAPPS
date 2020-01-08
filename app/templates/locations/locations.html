@@ -62,6 +62,29 @@ locationsApp.factory('locations', function($http){
         headers: {"Authorization": "Bearer hmuWG750nIxTHEfTIjLtjviX6udcURR2"},
         cache: true
       }).then(callback);
+    },
+    get_location_create_form: function(callback){
+      $http({
+        method: 'GET',
+        url: 'http://192.168.64.128:9000/api/locations/create_form',
+        headers: {"Authorization": "Bearer hmuWG750nIxTHEfTIjLtjviX6udcURR2"},
+        cache: true
+      }).then(callback);
+    },
+    create_location: function(data) {
+      $http({
+        method: 'POST',
+        url: 'http://192.168.64.128:9000/api/locations/create',
+        headers: {
+            "Authorization": "Bearer hmuWG750nIxTHEfTIjLtjviX6udcURR2",
+            'Content-Type': 'application/json; charset=utf-8'
+        },
+        data: data
+      }).then(function(response) {
+          console.log("Success", response.status, response.data)
+        }, function(response) {
+          console.log("Error", response.status, response.data)
+      });
     }
   };
 });
@@ -71,36 +94,35 @@ locationsApp.controller('LocationsListCtrl', function ($scope, locations){
     $scope.locations = response.data.data;
   });
 });
+    
 locationsApp.controller('LocationDetailCtrl', function ($scope, $routeParams, locations){
   locations.find($routeParams.locationId, function(location) {
     $scope.location = location.data.data;
   });
 });
-locationsApp.controller('LocationCreateCtrl', function ($scope, $routeParams, locations){
-  $scope.form_data = {
-      "labels": {
-          "mandatory": ["location"], 
-          "optional": ["test_optional_label1", "test_optional_label2"]
-      },
-      "properties": {
-          "mandatory": [
-              {"propertyName": "name", "propertyType": "string", "propertyValue": ""}, 
-              {"propertyName": "address", "propertyType": "string", "propertyValue": ""}
-          ], 
-          "optional":[{"propertyName": "test", "propertyType": "string", "propertyValue": ""}],
-          "types": ["string", "integer", "float", "boolean", "note"]
-      }
-          
-  };
+    
+locationsApp.controller('LocationCreateCtrl', function ($scope, $window, locations){
+  //load location create form model from server
+  locations.get_location_create_form(function(response) {
+    $scope.form_data = response.data;
+    // add empty chips list to form_data optional properties
+    for (var i = 0; i < $scope.form_data.properties.optional.length; i++) {
+        $scope.form_data.properties.optional[i].chips = []
+    }
+  });
   $scope.addOptionalProperty = function() {
-      $scope.form_data.properties.optional.push({"propertyName": "", "propertyType": "", "propertyValue": ""})
+      $scope.form_data.properties.optional.push({"propertyName": "", "propertyType": "", "propertyValue": "", "chips": []})
   };
   $scope.removeOptionalProperty = function(property) {
       var itemIndex = $scope.form_data.properties.optional.indexOf(property)
       $scope.form_data.properties.optional.splice(itemIndex, 1)
   };
-  $scope.SubmitForm = function() {
-      console.log($scope.form_data)
+  $scope.SubmitForm = function(form) {
+      if (form.$valid) {
+          locations.create_location($scope.form_data)
+          // redirect to locations page
+          $window.location.href = "#!/"
+      }
   };
 });
 </script>
@@ -113,11 +135,22 @@ locationsApp.controller('LocationCreateCtrl', function ($scope, $routeParams, lo
 {% endblock %}
 
 {% block page_controls %}
+{% raw %}
 <div class="container-fluid">
   <div class="btn-group pull-right" style="margin-bottom: 10px;" role="group">
-    <button type="button" class="glyphicon glyphicon-plus btn" onclick="window.location.href = '#!/create'"></button>
+    <button type="button" class="glyphicon glyphicon-edit btn" onclick="window.location.href = '#!/'"></button>      
+    <button type="button" class="glyphicon glyphicon-trash btn"></button>   
+    <button type="button" class="glyphicon glyphicon-plus btn btn-success dropdown-toggle" 
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a href="#!/create">Node</a></li>
+      <li><a href="#">Relationship</a></li>
+    </ul>
   </div>
 </div>
+{% endraw %}
 {% endblock %}
 
 {% block app_content %}

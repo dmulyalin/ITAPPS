@@ -1,25 +1,25 @@
 {% raw %}
 <h1>Add New Location</h1>
 
-<div class="panel panel-default">
-  <div class="panel-heading">Labels</div>
-   <md-content class="md-padding" layout="column">
-    <h4>Default</h4>
-    <md-chips ng-model="form_data.labels.mandatory" readonly="true"
-              md-removable="false" md-enable-chip-edit="false"></md-chips>
-    <h4>Additional</h4>
-    <md-chips ng-model="form_data.labels.optional" readonly="false"
-              md-removable="true" md-enable-chip-edit="true"
-              placeholder="Add labels" secondary-placeholder="+label"></md-chips>
-    <br/>
-    </md-content>
-</div>
-
-<div class="panel panel-default">
-  <div class="panel-heading">Properties</div>
-  <md-content layout-padding>
-    <div>
-      <form name="propertyForm">
+<form name="locationForm">
+  <div class="panel panel-default">
+    <div class="panel-heading">Labels</div>
+     <md-content class="md-padding" layout="column">
+      <h4>Default</h4>
+      <md-chips ng-model="form_data.labels.mandatory" readonly="true"
+                md-removable="false" md-enable-chip-edit="false"></md-chips>
+      <h4>Additional</h4>
+      <md-chips ng-model="form_data.labels.optional" readonly="false"
+                md-removable="true" md-enable-chip-edit="true"
+                placeholder="Add labels" secondary-placeholder="+add"></md-chips>
+      <br/>
+      </md-content>
+  </div>
+  
+  <div class="panel panel-default">
+    <div class="panel-heading">Properties</div>
+    <md-content layout-padding>
+      <div>
         <!-- Manatory properties -->
         <h4>Manadatory </h4>
         <span ng-repeat="property in form_data.properties.mandatory">
@@ -39,7 +39,10 @@
             </md-input-container>
             <!-- property value field -->
             <md-input-container class="md-block" flex="60">
-              <input name="type" ng-model="property.propertyValue" placeholder="Value">
+              <input name="mandatory_value" ng-model="property.propertyValue" placeholder="Value" required>
+              <div ng-messages="locationForm.mandatory_value.$error">
+                <div ng-message="required">This is required.</div>
+              </div>
             </md-input-container>
           </div>
         </span>
@@ -62,22 +65,43 @@
               </md-select>
             </md-input-container>
             <!-- property value field -->
-            <md-input-container class="md-block" flex="60">
-              <input name="type" ng-model="property.propertyValue" placeholder="Value">
+            <md-input-container class="md-block" flex="60" ng-switch on="property.propertyType">
+              <div ng-switch-when="string">
+                <input name="type" ng-model="property.propertyValue" placeholder="Value">
+              </div>
+              <div ng-switch-when="boolean"> 
+                <md-radio-group ng-model="property.propertyValue" layout-gt-sm="row" style="margin-left: 70px;">
+                  <md-radio-button value="true">True</md-radio-button>
+                  <md-radio-button value="false">False</md-radio-button>
+                </md-radio-group>
+              </div>
+              <div ng-switch-when="list">            
+                <md-chips ng-model="property.chips" readonly="false"
+                  md-removable="true" md-enable-chip-edit="true"
+                  placeholder="Add values" secondary-placeholder="+value"></md-chips>
+              </div>         
+              <div ng-switch-when="integer">            
+                <input name="integer" ng-model="property.propertyValue" placeholder="Value" ng-pattern="/^[0-9]+$/">
+                <div ng-messages="locationForm.integer.$error">
+                  <div ng-message="pattern">Please enter digit</div>
+                </div>
+              </div>   
+              <div ng-switch-default>
+                <input name="type" ng-model="property.propertyValue" placeholder="Value">
+              </div>
             </md-input-container>
             <button type="button" style="height: 40px; margin-top: 10px; margin-left: 5px;" 
                     class="glyphicon glyphicon-minus btn" ng-click="removeOptionalProperty(property)"></button>
           </div>
-       </span>
-       <!-- button to add new optional property -->
-       <md-button class="md-raised" ng-click="addOptionalProperty()">Add</md-button>
-       </form>
-    </div>
-  </md-content>
-</div>
-
-<div>
-  <md-button type="submit" ng-click="SubmitForm()">Submit</md-button>
-</div>
-
+         </span>
+        <!-- button to add new optional property -->
+        <md-button class="md-raised" ng-click="addOptionalProperty()">Add</md-button>
+      </div>
+    </md-content>
+  </div>
+ <!-- submit form butto -->
+ <div>
+   <md-button type="submit" ng-click="SubmitForm(locationForm)">Submit</md-button>
+ </div>
+</form>
 {% endraw %}

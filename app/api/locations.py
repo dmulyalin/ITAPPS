@@ -1,10 +1,11 @@
-from flask import url_for, jsonify, request, g, abort
+from flask import url_for, jsonify, request, g, abort, flash
 from flask_login import login_required, current_user
 from app.api.auth import token_auth
 from py2neo import Graph, Node, Relationship, NodeMatcher
 
 from . import api
 from . import errors
+from . import forms
 
 # initiate graph
 graph = None
@@ -67,8 +68,28 @@ def get_location(id):
     else:
         return errors.error_response(404, message="Location node with id '{}' not found in databse".format(id))
     
-@api.route('/api/locations', methods=['POST'])
+@api.route('/api/locations/create', methods=['POST'])
 def create_location():
     data = request.get_json() or {}
-    if 'name' not in data:
-        return bad_request('Location definition must include name field')
+    ret = {"Message": "", "Status": ""}
+    if data:
+        if graph is None:
+            get_graph()
+        # add location to gaph database
+        location_node = Node(*(data["labels"]["mandatory"] + data["labels"]["optional"]))
+        # add mandatory properties
+        for property in data["properties"]["mandatory"]:
+            if not property["propertyName"] in location_node:
+                location_node.update({property["propertyName"]: property["propertyValue"]})
+        # add optional properties
+        for property in data["properties"]["optional"]:
+            if not property["propertyName"] in location_node:
+                location_node.update({property["propertyName"]: property["propertyValue"]})  
+        # add location to graph
+        graph.merge(location_node, "location", "name")
+        ret["Message"] = "location created successfully: {}".format(location_node["name"])
+    return jsonify(ret)
+    
+@api.route('/api/locations/create_form', methods=['GET'])
+def get_location_create_form():
+    return jsonify(forms.location_create_form)
