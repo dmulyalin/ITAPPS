@@ -3,45 +3,81 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">Labels</div>
-  <div class="panel-body">
-   <!-- Default labels -->
-   <div class="form-group" data-ng-repeat="label in form_data.labels.mandatory">
-     <div class="btn-group" role="group" aria-label="...">
-       <button type="button" class="btn btn-default disabled">{{label.labelName}}</button>
-     </div>
-   <!-- additional/optional labels -->
-     <span data-ng-repeat="label in form_data.labels.optional">
-     <div class="btn-group" role="group" aria-label="...">
-       <button type="button" class="btn btn-default disabled">{{label.labelName}}</button>
-       <button type="button" class="btn btn-default"> - </button>
-     </div>
-     </span>
-   </div>
-   <!-- add button -->
-   <div class="btn-group">
-     <div class="input-group col-md-7">
-       <input class="form-control" type="text" placeholder="Label Name">
-       <span class="input-group-btn">
-        <button class="btn btn-success" type="button" ng-click="addNewOptionalLabel()">Add</button>
-      </span>
-     </div>
-   </div>
- </div>
+   <md-content class="md-padding" layout="column">
+    <h4>Default</h4>
+    <md-chips ng-model="form_data.labels.mandatory" readonly="true"
+              md-removable="false" md-enable-chip-edit="false"></md-chips>
+    <h4>Additional</h4>
+    <md-chips ng-model="form_data.labels.optional" readonly="false"
+              md-removable="true" md-enable-chip-edit="true"
+              placeholder="Add labels" secondary-placeholder="+label"></md-chips>
+    <br/>
+    </md-content>
 </div>
-<!--
-<div class="container">
-  <div class="btn-group" style="margin-bottom: 10px;" role="group">
-   <fieldset  data-ng-repeat="label in form_data.labels.mandatory">
-      <select>
-         <option>{{label.labelName}}</option>
-      </select>
-      <input class="form-control" id="{{label.labelName}}" name="{{label.labelName}}" required="" type="text" value="">
-      <button type="button" class="btn btn-lg btn-primary" ng-show="$last" ng-click="removeChoice()">-</button>
-   </fieldset>
- </div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Properties</div>
+  <md-content layout-padding>
+    <div>
+      <form name="propertyForm">
+        <!-- Manatory properties -->
+        <h4>Manadatory </h4>
+        <span ng-repeat="property in form_data.properties.mandatory">
+          <div layout-gt-sm="row">
+            <!-- property name field -->
+            <md-input-container class="md-block" flex="30">
+              <input ng-model="property.propertyName" placeholder="{{property.propertyName}}" disabled>
+            </md-input-container>
+            <!-- property type selector -->
+            <md-input-container class="md-block" flex="10">
+              <label>Type</label>
+              <md-select ng-model="property.propertyType">
+                <md-option value="{{property.propertyType}}">
+                  {{property.propertyType}}
+                </md-option>
+              </md-select>
+            </md-input-container>
+            <!-- property value field -->
+            <md-input-container class="md-block" flex="60">
+              <input name="type" ng-model="property.propertyValue" placeholder="Value">
+            </md-input-container>
+          </div>
+        </span>
+          
+        <!-- Additiona/Optional properties -->
+        <h4>Optional</h4>
+        <span ng-repeat="property in form_data.properties.optional">
+          <div layout-gt-sm="row">
+            <!-- property name field -->
+            <md-input-container class="md-block" flex="30">
+              <input ng-model="property.propertyName" placeholder="Name">
+            </md-input-container>
+            <!-- property type selector -->
+            <md-input-container class="md-block" flex="10">
+              <label>Type</label>
+              <md-select ng-model="property.propertyType">
+                <md-option ng-repeat="type in form_data.properties.types" value="{{type}}">
+                  {{type}}
+                </md-option>
+              </md-select>
+            </md-input-container>
+            <!-- property value field -->
+            <md-input-container class="md-block" flex="60">
+              <input name="type" ng-model="property.propertyValue" placeholder="Value">
+            </md-input-container>
+            <button type="button" style="height: 40px; margin-top: 10px; margin-left: 5px;" 
+                    class="glyphicon glyphicon-minus btn" ng-click="removeOptionalProperty(property)"></button>
+          </div>
+       </span>
+       <!-- button to add new optional property -->
+       <md-button class="md-raised" ng-click="addOptionalProperty()">Add</md-button>
+       </form>
+    </div>
+  </md-content>
 </div>
+
 <div>
- <button ng-click="addNewlabel()">Add label</button>
+  <md-button type="submit" ng-click="SubmitForm()">Submit</md-button>
 </div>
--->
+
 {% endraw %}

@@ -8,27 +8,23 @@
 <!-- Angular Material requires Angular.js Libraries -->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-route.min.js"></script>
-<!--
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-animate.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-aria.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-messages.min.js"></script>
--->
-<!-- Angular Material Library 
+
+<!-- Angular Material Library-->
 <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>
--->
-<!-- Angular Material style sheet
+
+<!-- Angular Material style sheet -->
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">
--->
+
 
 <!-- OLD imports
 <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular-route.min.js"></script>
 -->
 <script type="text/javascript">       
-var locationsApp = angular.module('locationsApp', ['ngRoute' 
-                                                   //'ngMaterial', 
-                                                   //'ngMessages'
-                                                  ]);
+var locationsApp = angular.module('locationsApp', ['ngRoute', 'ngMaterial', 'ngMessages']);
 
 locationsApp.config(function($routeProvider) {
   $routeProvider.
@@ -83,25 +79,28 @@ locationsApp.controller('LocationDetailCtrl', function ($scope, $routeParams, lo
 locationsApp.controller('LocationCreateCtrl', function ($scope, $routeParams, locations){
   $scope.form_data = {
       "labels": {
-          "mandatory": [
-              {"labelName": "location"}
-          ], 
-          "optional": [
-              {"labelName": "test_optional_label-1"},
-              {"labelName": "test_optional_label-2"}
-          ]},
+          "mandatory": ["location"], 
+          "optional": ["test_optional_label1", "test_optional_label2"]
+      },
       "properties": {
           "mandatory": [
-              {"propertyName": "name"}, 
-              {"propertyName": "address"}
+              {"propertyName": "name", "propertyType": "string", "propertyValue": ""}, 
+              {"propertyName": "address", "propertyType": "string", "propertyValue": ""}
           ], 
-          "optional":[]}
+          "optional":[{"propertyName": "test", "propertyType": "string", "propertyValue": ""}],
+          "types": ["string", "integer", "float", "boolean", "note"]
+      }
+          
   };
-  $scope.addNewMandatoryLabel = function() {
-      $scope.form_data.labels.mandatory.push({'labelName':''});
+  $scope.addOptionalProperty = function() {
+      $scope.form_data.properties.optional.push({"propertyName": "", "propertyType": "", "propertyValue": ""})
   };
-  $scope.addNewOptionalLabel = function() {
-      $scope.form_data.labels.optional.push({'labelName':''});
+  $scope.removeOptionalProperty = function(property) {
+      var itemIndex = $scope.form_data.properties.optional.indexOf(property)
+      $scope.form_data.properties.optional.splice(itemIndex, 1)
+  };
+  $scope.SubmitForm = function() {
+      console.log($scope.form_data)
   };
 });
 </script>
