@@ -1,23 +1,7 @@
-{% import "bootstrap/utils.html" as utils %}
 {% extends "base.html" %}
-{% block title %}Locations{% endblock %}
-
 {% block head %}
 {{super()}}
 {% raw %}
-<!-- Angular Material requires Angular.js Libraries -->
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-route.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-animate.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-aria.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-messages.min.js"></script>
-
-<!-- Angular Material Library-->
-<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>
-
-<!-- Angular Material style sheet -->
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">
-
 <script type="text/javascript">       
 var locationsApp = angular.module('locationsApp', ['ngRoute', 'ngMaterial', 'ngMessages']);
 
@@ -171,25 +155,6 @@ locationsApp.controller('pageControls', function ($scope, $window, locations_fac
 {% block body %}
 {{super()}}
 <body  ng-app="locationsApp"></body>
-{% endblock %}
-
-{% block page_controls %}
-{% raw %}
-<div class="container-fluid" ng-controller="pageControls">
-  <div class="btn-group pull-right" style="margin-bottom: 10px;" role="group">
-    <button type="button" class="glyphicon glyphicon-edit btn" onclick="window.location.href = '#!/'"></button>      
-    <button type="button" class="glyphicon glyphicon-trash btn" ng-click="deleteItems()"></button>   
-    <button type="button" class="glyphicon glyphicon-plus btn btn-success dropdown-toggle" 
-            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu">
-      <li><a href="#!/create">Node</a></li>
-      <li><a href="#">Relationship</a></li>
-    </ul>
-  </div>
-</div>
-{% endraw %}
 {% endblock %}
 
 {% block app_content %}

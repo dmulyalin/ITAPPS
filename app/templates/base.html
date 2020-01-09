@@ -1,124 +1,181 @@
-{% extends 'bootstrap/base.html' %}
-
+<html>
 {% block head %}
-{{super()}}
-    <meta charset="utf-8">
-    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-{% endblock %}
-
-{% block title %}
+<head>
+  <title>
     {% if title %}{{ title }}{% else %}ITAPPS{% endif %}
+  </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+  <!-- Bootstrap 3
+  <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  -->
+    
+  <!-- local CSS styles -->
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    
+  <!-- Angular -->
+  <!-- Angular.js Libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-route.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-messages.min.js"></script>
+  <!-- Angular Material Library-->
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>
+  <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">
+    
+  <!-- bootstrap 4 -->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    
+</head>
 {% endblock %}
+{% block body %}
+<body>
 
 {% block navbar %}
 {% if current_user.is_authenticated %}
-<nav class="navbar navbar-default" style="margin-bottom: 10px;">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <a class="navbar-brand" href="{{ url_for('home.homepage') }}">ITAPPS</a>
-    </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Companies<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Organizations</a></li>
-            <li><a href="#">Departments</a></li>
-            <li><a href="#">Roles</a></li>
-            <li><a href="#">Persons</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Geo<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="{{ url_for('locations.locations_main_page') }}">Locations</a></li>
-            <li><a href="#">Racks</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hardware<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="{{ url_for('devices.list_devices') }}">Devices</a></li>
-            <li><a href="#">Vendors</a></li>
-            <li><a href="#">Licences</a></li>
-            <li><a href="#">Contracts</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Switching<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">L2 Domains</a></li>
-            <li><a href="#">Vlans</a></li>
-            <li><a href="#">Vxlan</a></li>
-            <li><a href="#">VPLS</a></li>
-            <li><a href="#">PWE</a></li>
-            <li><a href="#">EVPN</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Routing<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">L3 Domains</a></li>
-            <li><a href="#">VRF</a></li>
-          </ul>
-        </li>
-      </ul>
-      <form class="navbar-form navbar-right">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 0px;">
+  <a class="navbar-brand" href="{{ url_for('home.homepage') }}">ITAPPS</a>
+
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mx-0">
+      <!-- COmpanies dropdown menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Companies
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Organizations</a>
+          <a class="dropdown-item" href="#">Departments</a>
+          <a class="dropdown-item" href="#">Roles</a>
+          <a class="dropdown-item" href="#">Persons</a>
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tools<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="{{ url_for('tools_import.tools_import') }}">Import</a></li>
-            <li><a href="#">TTP Parser</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Users</a></li>
-            <li><a href="#">Roles</a></li>
-          </ul>
-        </li>
-        <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+      </li>
+
+      <!-- Geo dropdown menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Geo
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{{ url_for('locations.locations_main_page') }}">Locations</a>
+          <a class="dropdown-item" href="#">Racks</a>
+        </div>
+      </li>
+      
+      <!-- Hardware dropdown menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Hardware
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{{ url_for('devices.list_devices') }}">Devices</a>
+          <a class="dropdown-item" href="#">Vendors</a>
+          <a class="dropdown-item" href="#">Licences</a>
+          <a class="dropdown-item" href="#">Contracts</a>
+        </div>
+      </li>
+        
+      <!-- Switching dropdown menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Switching
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">L2 Domains</a>
+          <a class="dropdown-item" href="#">Vlans</a>
+          <a class="dropdown-item" href="#">VXLAN</a>
+          <a class="dropdown-item" href="#">VPLS</a>
+          <a class="dropdown-item" href="#">PWE</a>
+          <a class="dropdown-item" href="#">EVPN</a>
+        </div>
+      </li>
+        
+      <!-- Routing dropdown menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Routing
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">L3 Domains</a>
+          <a class="dropdown-item" href="#">VRF</a>
+        </div>
+      </li>
+        
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('tools_import.tools_import') }}">Import</a>
+      </li>   
+    </ul>
+      
+    <!-- search form 
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    -->
+
+    <ul class="navbar-nav ml-auto">
+      <!-- Admin dropdown menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Admin
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Users</a>
+          <a class="dropdown-item" href="#">Roles</a>
+        </div>
+      </li>   
+    
+      <!-- logout link -->
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('auth.logout') }}">Logout</a>
+      </li>   
+    </ul>
+  </div>
 </nav>
+   
 {% else %}
-<nav class="navbar navbar-default" style="margin-bottom: 10px;">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="{{ url_for('home.homepage') }}">ITAPPS</a>
-    </div>
-      <ul class="nav navbar-nav navbar-right">
-         <li><a href="{{ url_for('auth.login') }}">Login</a></li>
-         <li><a href="{{ url_for('auth.register') }}">Register</a></li>
-      </ul>
-    </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 0px;">
+  <a class="navbar-brand" href="{{ url_for('home.homepage') }}">ITAPPS</a>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('auth.login') }}">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('auth.register') }}">Register</a>
+      </li>
+    </ul>
+   </div>
 </nav>
 {% endif %}
 {% endblock %}
 
 {% block content %}
-{% block page_controls %}{% endblock %}
-    <div class="container-fluid" style="padding: 0px;">
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            {% for message in messages %}
-            <div class="alert alert-info" role="alert">{{ message }}</div>
-            {% endfor %}
-        {% endif %}
-        {% endwith %}
-
-        {# application content needs to be provided in the app_content block #}
-        {% block app_content %}{% endblock %}
-    </div>
+    
+{% block page_controls %}
 {% endblock %}
+    
+{% block app_content %}
+{% endblock %}
+    
+{% endblock %}
+    
+<!-- bootstrap 3 imports 
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+-->
+    
+<!-- Optional Bootstrap 4 JavaScript -->
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+{% endblock %}
+</html>

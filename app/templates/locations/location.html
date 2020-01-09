@@ -1,7 +1,16 @@
 {% raw %}
-<h1>{{location.name}}</h1>
-<ul>
-  <li>Postcode: {{location.postcode}}</li>
-  <li>Description: {{location.description}}</li>
-</ul>
+    <div class="col-md-8">
+      <table class="table table-bordered table-condensed" style="width: 50%;">
+        <tbody>
+        <tr>
+          <td>Name</td>
+          <td>{{location.name}}</td>
+        </tr>
+        <tr>
+          <td>Description</td>
+          <td>{{location.description}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
 {% endraw %}
