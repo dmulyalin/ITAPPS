@@ -109,7 +109,7 @@
 
 {% block content %}
 {% block page_controls %}{% endblock %}
-    <div class="container">
+    <div class="container-fluid" style="padding: 0px;">
         {% with messages = get_flashed_messages() %}
         {% if messages %}
             {% for message in messages %}

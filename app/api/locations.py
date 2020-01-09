@@ -86,10 +86,23 @@ def create_location():
             if not property["propertyName"] in location_node:
                 location_node.update({property["propertyName"]: property["propertyValue"]})  
         # add location to graph
-        graph.merge(location_node, "location", "name")
+        graph.merge(location_node, "Location", "name")
         ret["Message"] = "location created successfully: {}".format(location_node["name"])
     return jsonify(ret)
     
 @api.route('/api/locations/templates', methods=['GET'])
 def get_location_create_form():
     return jsonify(graph_templates.location_node_base)
+
+@api.route('/api/locations/delete', methods=['POST'])
+def delete_location():
+    data = request.get_json() or {}
+    ret = {"Message": "", "Status": ""}
+    if data:
+        if graph is None:
+            get_graph()
+        # delete location(s) from gaph database
+        for item in data:
+            graph.evaluate("MATCH (n) WHERE ID(n)={} DETACH DELETE n".format(item["id"]))
+            ret["Status"] += "Deleted location: {}\n".format(item["name"])
+    return jsonify(ret)

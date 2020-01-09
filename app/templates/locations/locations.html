@@ -40,8 +40,9 @@ locationsApp.config(function($routeProvider) {
     });
 });
     
-locationsApp.factory('locations', function($http){
+locationsApp.factory('locations_factory', function($http){
   return {
+    shared_data: {},
     list: function (callback){
       $http({
         method: 'GET',
@@ -80,25 +81,51 @@ locationsApp.factory('locations', function($http){
         }, function(response) {
           console.log("Error", response.status, response.data)
       });
+    },
+    delete_location: function(data) {
+      $http({
+        method: 'POST',
+        url: 'http://192.168.64.128:9000/api/locations/delete',
+        headers: {
+            "Authorization": "Bearer hmuWG750nIxTHEfTIjLtjviX6udcURR2",
+            'Content-Type': 'application/json; charset=utf-8'
+        },
+        data: data
+      }).then(function(response) {
+          console.log("Success", response.status, response.data)
+        }, function(response) {
+          console.log("Error", response.status, response.data)
+      });
     }
   };
 });
        
-locationsApp.controller('LocationsListCtrl', function ($scope, locations){
-  locations.list(function(response) {
+locationsApp.controller('LocationsListCtrl', function ($scope, locations_factory){
+  locations_factory.list(function(response) {
     $scope.locations = response.data.data;
+    for (var i = 0; i < $scope.locations.length; i++) {
+            $scope.locations[i].checkbox = false
+        }      
+    // save locations in shared data so that can access it from other controllers
+    locations_factory.shared_data.locations = $scope.locations
   });
+  // function to set checkbox selected to all items in the table if header checkbox checkecd
+  $scope.checkboxAll = function() {
+    for (var i = 0; i < $scope.locations.length; i++) {
+            $scope.locations[i].checkbox = $scope.locations.checkboxAll
+        }        
+  };
 });
     
-locationsApp.controller('LocationDetailCtrl', function ($scope, $routeParams, locations){
-  locations.find($routeParams.locationId, function(location) {
+locationsApp.controller('LocationDetailCtrl', function ($scope, $routeParams, locations_factory){
+  locations_factory.find($routeParams.locationId, function(location) {
     $scope.location = location.data.data;
   });
 });
     
-locationsApp.controller('LocationCreateCtrl', function ($scope, $window, locations){
+locationsApp.controller('LocationCreateCtrl', function ($scope, $window, locations_factory){
   //load location create form model from server
-  locations.get_location_create_form(function(response) {
+  locations_factory.get_location_create_form(function(response) {
     $scope.form_data = response.data;
     // add empty chips list to form_data optional properties
     for (var i = 0; i < $scope.form_data.properties.optional.length; i++) {
@@ -114,11 +141,28 @@ locationsApp.controller('LocationCreateCtrl', function ($scope, $window, locatio
   };
   $scope.SubmitForm = function(form) {
       if (form.$valid) {
-          locations.create_location($scope.form_data)
+          locations_factory.create_location($scope.form_data)
           // redirect to locations page
           $window.location.href = "#!/"
+          $window.location.reload()
       }
   };
+});
+    
+locationsApp.controller('pageControls', function ($scope, $window, locations_factory){
+  $scope.deleteItems = function() {
+      var delete_list = [];
+      for (var i = 0; i < locations_factory.shared_data.locations.length; i++) {
+          location_item = locations_factory.shared_data.locations[i]
+          if (location_item.checkbox == true) {
+              delete_list.push(location_item)
+          }
+      }      
+      locations_factory.delete_location(delete_list)
+      // redirect to locations page
+      $window.location.href = "#!/"
+      $window.location.reload()
+  };    
 });
 </script>
 {% endraw %}
@@ -131,10 +175,10 @@ locationsApp.controller('LocationCreateCtrl', function ($scope, $window, locatio
 
 {% block page_controls %}
 {% raw %}
-<div class="container-fluid">
+<div class="container-fluid" ng-controller="pageControls">
   <div class="btn-group pull-right" style="margin-bottom: 10px;" role="group">
     <button type="button" class="glyphicon glyphicon-edit btn" onclick="window.location.href = '#!/'"></button>      
-    <button type="button" class="glyphicon glyphicon-trash btn"></button>   
+    <button type="button" class="glyphicon glyphicon-trash btn" ng-click="deleteItems()"></button>   
     <button type="button" class="glyphicon glyphicon-plus btn btn-success dropdown-toggle" 
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="caret"></span>
@@ -150,6 +194,6 @@ locationsApp.controller('LocationCreateCtrl', function ($scope, $window, locatio
 
 {% block app_content %}
 {% raw %}
-<div ng-view></div>
+<div ng-view class="container-fluid" style="padding: 0px;"></div>
 {% endraw %}
 {% endblock %}

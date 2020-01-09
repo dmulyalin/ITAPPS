@@ -5,11 +5,12 @@ location_node_base = {
       },
       "properties": {
           "mandatory": [
-              {"propertyName": "name", "propertyType": "string", "propertyValue": ""}, 
+              {"propertyName": "name", "propertyType": "string", "propertyValue": "", "unique": True}, 
               {"propertyName": "address", "propertyType": "string", "propertyValue": ""}
           ], 
           "optional":[
-              {"propertyName": "description", "propertyType": "string", "propertyValue": ""}
+              {"propertyName": "description", "propertyType": "string", "propertyValue": ""},
+              {"propertyName": "postal code", "propertyType": "string", "propertyValue": "", "unique": True},
           ],
           "types": ["string", "integer", "boolean", "note", "list"]
       }  

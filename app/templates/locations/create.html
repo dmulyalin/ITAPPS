@@ -1,4 +1,5 @@
 {% raw %}
+<div class="container-fluid" style="width: 70%;">
 <h1>Add New Location</h1>
 
 <form name="locationForm">
@@ -25,8 +26,13 @@
         <span ng-repeat="property in form_data.properties.mandatory">
           <div layout-gt-sm="row">
             <!-- property name field -->
-            <md-input-container class="md-block" flex="30">
-              <input ng-model="property.propertyName" placeholder="{{property.propertyName}}" disabled>
+            <md-input-container class="md-block" flex="30" ng-switch on="property.unique">
+              <div ng-switch-when="true"> 
+                <input ng-model="property.propertyName" placeholder="{{property.propertyName}} (Value must be unique)" disabled>
+              </div>
+              <div ng-switch-default>
+                <input ng-model="property.propertyName" placeholder="{{property.propertyName}}" disabled>
+              </div>                
             </md-input-container>
             <!-- property type selector -->
             <md-input-container class="md-block" flex="10">
@@ -52,8 +58,13 @@
         <span ng-repeat="property in form_data.properties.optional">
           <div layout-gt-sm="row">
             <!-- property name field -->
-            <md-input-container class="md-block" flex="30">
-              <input ng-model="property.propertyName" placeholder="Name">
+            <md-input-container class="md-block" flex="30" ng-switch on="property.unique">
+              <div ng-switch-when="true"> 
+                <input ng-model="property.propertyName" placeholder="Name (Value must be unique)">
+              </div>
+              <div ng-switch-default>
+                <input ng-model="property.propertyName" placeholder="Name">
+              </div>
             </md-input-container>
             <!-- property type selector -->
             <md-input-container class="md-block" flex="10">
@@ -112,4 +123,5 @@
    <md-button type="submit" ng-click="SubmitForm(locationForm)">Submit</md-button>
  </div>
 </form>
+</div>
 {% endraw %}
