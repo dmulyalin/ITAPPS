@@ -3,8 +3,9 @@
 <h1>Add New Location</h1>
 
 <form name="locationForm">
-  <div class="panel panel-default">
-    <div class="panel-heading">Labels</div>
+  <div class="card bg-light mb-3">
+    <div class="card-header">Labels</div>
+    <div calss="card-body">
      <md-content class="md-padding" layout="column">
       <h4>Default</h4>
       <md-chips ng-model="form_data.labels.mandatory" readonly="true"
@@ -15,16 +16,16 @@
                 placeholder="Add labels" secondary-placeholder="+add"></md-chips>
       <br/>
       </md-content>
+    </div>
   </div>
   
-  <div class="panel panel-default">
-    <div class="panel-heading">Properties</div>
-    <md-content layout-padding>
-      <div>
+  <div class="card bg-light mb-3">
+    <div class="card-header">Properties</div>
+    <md-content layout-padding class="card-body">
         <!-- Manatory properties -->
         <h4>Manadatory </h4>
-        <span ng-repeat="property in form_data.properties.mandatory">
-          <div layout-gt-sm="row">
+          <div layout-gt-sm="row" ng-repeat="property in form_data.properties.mandatory">
+              
             <!-- property name field -->
             <md-input-container class="md-block" flex="30" ng-switch on="property.unique">
               <div ng-switch-when="true"> 
@@ -34,6 +35,7 @@
                 <input ng-model="property.propertyName" placeholder="{{property.propertyName}}" disabled>
               </div>                
             </md-input-container>
+              
             <!-- property type selector -->
             <md-input-container class="md-block" flex="10">
               <label>Type</label>
@@ -43,6 +45,7 @@
                 </md-option>
               </md-select>
             </md-input-container>
+              
             <!-- property value field -->
             <md-input-container class="md-block" flex="60">
               <input name="mandatory_value" ng-model="property.propertyValue" placeholder="Value" required>
@@ -51,12 +54,11 @@
               </div>
             </md-input-container>
           </div>
-        </span>
           
         <!-- Additiona/Optional properties -->
         <h4>Optional</h4>
-        <span ng-repeat="property in form_data.properties.optional">
-          <div layout-gt-sm="row">
+          <div layout-gt-sm="row" ng-repeat="property in form_data.properties.optional">
+              
             <!-- property name field -->
             <md-input-container class="md-block" flex="30" ng-switch on="property.unique">
               <div ng-switch-when="true"> 
@@ -66,6 +68,7 @@
                 <input ng-model="property.propertyName" placeholder="Name">
               </div>
             </md-input-container>
+              
             <!-- property type selector -->
             <md-input-container class="md-block" flex="10">
               <label>Type</label>
@@ -75,6 +78,7 @@
                 </md-option>
               </md-select>
             </md-input-container>
+              
             <!-- property value field -->
             <md-input-container class="md-block" flex="60" ng-switch on="property.propertyType">
               <div ng-switch-when="string">
@@ -109,13 +113,11 @@
                 <input name="type" ng-model="property.propertyValue" placeholder="Value">
               </div>
             </md-input-container>
-            <button type="button" style="height: 40px; margin-top: 10px; margin-left: 5px;" 
-                    class="glyphicon glyphicon-minus btn" ng-click="removeOptionalProperty(property)"></button>
+            <button type="button" class="btn btn-danger" style="height: 40px; margin-top: 10px; margin-left: 5px;" 
+                    ng-click="removeOptionalProperty(property)"> - </button>
           </div>
-         </span>
         <!-- button to add new optional property -->
         <md-button class="md-raised" ng-click="addOptionalProperty()">Add</md-button>
-      </div>
     </md-content>
   </div>
  <!-- submit form butto -->

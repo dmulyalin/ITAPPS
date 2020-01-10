@@ -1,6 +1,57 @@
 {% raw %}
-    <div class="col-md-8">
-      <table class="table table-bordered table-condensed" style="width: 50%;">
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+</div>
+
+<div class="container-fluid" id="wholePage">
+  <div class="row align-items-center" style="margin: 5px;" id="pageControls" ng-controller="pageControls">
+    <div class="col-4 offset-md-8 text-right">
+      <div class="btn-group btn-group-sm" role="group" aria-label="Page Controls">
+        <button type="button" class="btn btn-light  btn-sm" ng-click="deleteItems()">
+          <span class="oi oi-trash" title="Delete"></span>
+        </button>
+        <button type="button" class="btn btn-light  btn-sm" onclick="window.location.href = '#!/'">
+          <span class="oi oi-pencil" title="Edit"></span>
+        </button>
+        <!-- Add button with dropdown options -->
+        <div class="btn-group" role="group">
+          <button id="btnGroupDrop1" type="button" 
+                  class="btn btn-secondary btn-success dropdown-toggle  btn-sm" 
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="oi oi-plus" title="Add" aria-hidden="true"></span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="btnGroupDrop1">
+            <a class="dropdown-item" href="#!/create">Node</a>
+            <a class="dropdown-item" href="#">Relationship</a>
+          </div>
+      </div>
+    </div>
+   </div>
+  </div>
+    
+  <div class="row align-items-start justify-content-between" style="margin: 5px;" id="mainContent">
+    <div class="col-9" id="contentSpace">
+      <div class="row" id="tableView">
+      <table class="table table-bordered table-hover table-sm">
+        <thead>
+          <tr>
+            <th width="15%">Proprties</th>
+            <th width="35%">Values</th>
+          </tr>
+          </thead>
         <tbody>
         <tr>
           <td>Name</td>
@@ -12,5 +63,11 @@
         </tr>
         </tbody>
       </table>
+      </div>
     </div>
+    <div class="col-3" id="moreStaff">
+      More staff here
+    </div>
+  </div>
+</div>
 {% endraw %}
