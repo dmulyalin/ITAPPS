@@ -1,15 +1,10 @@
 <html>
-{% block head %}
 <head>
   <title>
     {% if title %}{{ title }}{% else %}ITAPPS{% endif %}
   </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-  <!-- Bootstrap 3
-  <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-  -->
     
   <!-- local CSS styles -->
   <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
@@ -33,113 +28,58 @@
   <!-- Iconinc Icons -->
   <link href="{{ url_for('static', filename='open-iconic/font/css/open-iconic-bootstrap.css') }}" rel="stylesheet">
 </head>
-{% endblock %}
-{% block body %}
-<body>
-
-{% block navbar %}
-{% if current_user.is_authenticated %}
-<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 0px;">
-  <a class="navbar-brand" href="{{ url_for('home.homepage') }}">ITAPPS</a>
-
-  <div class="collapse navbar-collapse">
-    <ul class="navbar-nav mx-0">
-      <!-- COmpanies dropdown menu -->
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Companies
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Organizations</a>
-          <a class="dropdown-item" href="#">Departments</a>
-          <a class="dropdown-item" href="#">Roles</a>
-          <a class="dropdown-item" href="#">Persons</a>
-        </div>
-      </li>
-
-      <!-- Geo dropdown menu -->
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Geo
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{ url_for('locations.locations_main_page') }}">Locations</a>
-          <a class="dropdown-item" href="#">Racks</a>
-        </div>
-      </li>
-      
-      <!-- Hardware dropdown menu -->
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Hardware
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{ url_for('devices.list_devices') }}">Devices</a>
-          <a class="dropdown-item" href="#">Vendors</a>
-          <a class="dropdown-item" href="#">Licences</a>
-          <a class="dropdown-item" href="#">Contracts</a>
-        </div>
-      </li>
-        
-      <!-- Switching dropdown menu -->
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Switching
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">L2 Domains</a>
-          <a class="dropdown-item" href="#">Vlans</a>
-          <a class="dropdown-item" href="#">VXLAN</a>
-          <a class="dropdown-item" href="#">VPLS</a>
-          <a class="dropdown-item" href="#">PWE</a>
-          <a class="dropdown-item" href="#">EVPN</a>
-        </div>
-      </li>
-        
-      <!-- Routing dropdown menu -->
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Routing
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">L3 Domains</a>
-          <a class="dropdown-item" href="#">VRF</a>
-        </div>
-      </li>
-        
-      <li class="nav-item">
-        <a class="nav-link" href="{{ url_for('tools_import.tools_import') }}">Import</a>
-      </li>   
-    </ul>
-      
-    <!-- search form 
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-    -->
-
-    <ul class="navbar-nav ml-auto">
-      <!-- Admin dropdown menu -->
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Admin
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Users</a>
-          <a class="dropdown-item" href="#">Roles</a>
-        </div>
-      </li>   
     
-      <!-- logout link -->
-      <li class="nav-item">
-        <a class="nav-link" href="{{ url_for('auth.logout') }}">Logout</a>
-      </li>   
-    </ul>
+{% if current_user.is_authenticated %}
+<body ng-app="locationsApp" ng-controller="OverallCtrl">   
+{% raw %}
+<md-content id="body-part" flex layout="row" layout-fill>
+    <md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="4"
+                style="width: 10%;" md-is-locked-open="isSideNavOpen">        
+      <md-toolbar class="md-menu-toolbar">
+        <div layout="column">
+            <md-menu-bar>
+              <md-menu md-position-mode="cascade">
+                <button aria-label="Open menu" ng-click="$mdMenu.open($event)">
+                  Organizations
+                </button>
+                <md-menu-content width="3">
+                  <md-menu-item ng-repeat="org in organizations">
+                    <md-menu class="nested-menu">
+                      <md-button ng-click="onClick(org.department)">{{ org.department }}</md-button>
+                      <md-menu-content width="3">
+                        <md-menu-item ng-repeat="manager in org.managers">
+                          <md-menu>
+                            <md-button ng-click="onClick(manager.name)">{{ manager.name }}</md-button>
+                            <md-menu-content width="2">
+                              <md-menu-item ng-repeat="person in manager.reports">
+                                <md-button ng-click="onClick(person.name)">{{ person.name }}</md-button>
+                              </md-menu-item>
+                            </md-menu-content>
+                          </md-menu>
+                        </md-menu-item>
+                      </md-menu-content>
+                    </md-menu>
+                  </md-menu-item>
+                </md-menu-content>
+              </md-menu>
+            </md-menu-bar>
+        </div>
+      </md-toolbar>
+    </md-sidenav>
+{% endraw %}
+    
+  <div>
+    <button type="button" class="btn btn-light btn-lg" ng-click="toggleLeft()">
+      SideNav
+    </button>   
   </div>
-</nav>
-   
+    
+{% block app_content %} 
+  <div ng-view flex style="padding: 0px;"></div>
+{% endblock %}
+<md-content>
 {% else %}
+<body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 0px;">
   <a class="navbar-brand" href="{{ url_for('home.homepage') }}">ITAPPS</a>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -154,23 +94,7 @@
    </div>
 </nav>
 {% endif %}
-{% endblock %}
-
-{% block content %}
-    
-{% block page_controls %}
-{% endblock %}
-    
-{% block app_content %}
-{% endblock %}
-    
-{% endblock %}
-    
-<!-- bootstrap 3 imports 
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
--->
-    
+       
 <!-- Optional Bootstrap 4 JavaScript -->
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -178,6 +102,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<!-- ITAPS Script -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/itapps_v0.js') }}"></script>
 </body>
-{% endblock %}
 </html>

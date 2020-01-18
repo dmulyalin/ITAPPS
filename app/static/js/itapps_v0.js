@@ -1,8 +1,3 @@
-{% extends "base.html" %}
-{% block head %}
-{{super()}}
-{% raw %}
-<script type="text/javascript">       
 var locationsApp = angular.module('locationsApp', ['ngRoute', 'ngMaterial', 'ngMessages']);
 
 locationsApp.config(function($routeProvider) {
@@ -160,10 +155,12 @@ locationsApp.controller('pageControls', function ($scope, $window, locations_fac
     
 locationsApp.controller('OverallCtrl', function ($scope, $mdSidenav) {
   $scope.toggleLeft = buildToggler('left');
-
+  $scope.isSideNavOpen = false
+    
   function buildToggler(componentId) {
     return function() {
-      $mdSidenav(componentId).toggle();
+      //$mdSidenav(componentId).toggle();
+      $scope.isSideNavOpen = !$scope.isSideNavOpen;
     };
   }
     
@@ -237,17 +234,3 @@ locationsApp.controller('OverallCtrl', function ($scope, $mdSidenav) {
       console.log(item);
     };
 });
-</script>
-{% endraw %}
-{% endblock %}
-
-{% block body %}
-{{super()}}
-<body  ng-app="locationsApp" ng-controller="OverallCtrl"></body>
-{% endblock %}
-
-{% block app_content %}
-{% raw %}
-<div ng-view class="container-fluid" style="padding: 0px;"></div>
-{% endraw %}
-{% endblock %}
