@@ -1,4 +1,6 @@
-location_node_base = {
+nodes = { 
+    
+    "location_node_base": {
       "labels": {
           "mandatory": ["Location"], 
           "optional": []
@@ -10,8 +12,15 @@ location_node_base = {
           ], 
           "optional":[
               {"propertyName": "description", "propertyType": "string", "propertyValue": ""},
-              {"propertyName": "postal code", "propertyType": "string", "propertyValue": "", "unique": True},
+              {"propertyName": "postal code", "propertyType": "string", "propertyValue": "", "unique": True}
           ],
           "types": ["string", "integer", "boolean", "note", "list"]
       }  
     }
+    
+# next template here    
+}
+
+relatioships = {}
+
+menu = {}

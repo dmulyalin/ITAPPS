@@ -1,8 +1,8 @@
 {% raw %}
 <div class="container-fluid" style="width: 70%;">
-<h1>Add New Location</h1>
+<h1>Add New Device</h1>
 
-<form name="locationForm">
+<form name="deviceForm">
   <div class="card bg-light mb-3">
     <div class="card-header">Labels</div>
     <div class="card-body">
@@ -49,7 +49,7 @@
             <!-- property value field -->
             <md-input-container class="md-block" flex="60">
               <input name="mandatory_value" ng-model="property.propertyValue" placeholder="Value" required>
-              <div ng-messages="locationForm.mandatory_value.$error">
+              <div ng-messages="deviceForm.mandatory_value.$error">
                 <div ng-message="required">This is required.</div>
               </div>
             </md-input-container>
@@ -98,7 +98,7 @@
               </div>         
               <div ng-switch-when="integer">            
                 <input name="integer" ng-model="property.propertyValue" placeholder="Value" ng-pattern="/^[0-9]+$/">
-                <div ng-messages="locationForm.integer.$error">
+                <div ng-messages="deviceForm.integer.$error">
                   <div ng-message="pattern">Please enter digit</div>
                 </div>
               </div>   
@@ -122,7 +122,7 @@
   </div>
  <!-- submit form button -->
  <div>
-   <md-button type="submit" ng-click="SubmitForm(locationForm)">Submit</md-button>
+   <md-button type="submit" ng-click="SubmitForm(deviceForm)">Submit</md-button>
  </div>
 </form>
 </div>

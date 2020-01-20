@@ -4,61 +4,109 @@
     {% if title %}{{ title }}{% else %}ITAPPS{% endif %}
   </title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-  <!-- local CSS styles -->
-  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">    
   <!-- Angular -->
-  <!-- Angular.js Libraries -->
+  <!-- Angular.js Libraries CDN version:
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-route.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-animate.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-aria.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-messages.min.js"></script>
-  <!-- Angular Material Library-->
-  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-route.min.js">DONE</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-animate.min.js">DONE</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-aria.min.js">DONE</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-messages.min.js">DONE</script>
+  -->
+  <script src="{{ url_for('static', filename='js/angularjs/1.7.6/angular.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/angularjs/1.7.6/angular-route.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/angularjs/1.7.6/angular-animate.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/angularjs/1.7.6/angular-aria.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/angularjs/1.7.6/angular-messages.min.js') }}"></script>
+    
+  <!-- Angular Material Library CDN version:
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js">DONE</script>
+  -->
+  <script src="{{ url_for('static', filename='js/angular_material/1.1.12/angular-material.min.js') }}"></script>
+    
   <!-- Angular Material style sheet -->
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
   <!-- bootstrap 4 -->
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    
-  <!-- Iconinc Icons -->
-  <link href="{{ url_for('static', filename='open-iconic/font/css/open-iconic-bootstrap.css') }}" rel="stylesheet">
+
+  <!-- ITAPPS Script -->
+  <script type="text/javascript" src="{{ url_for('static', filename='js/itapps_v0.js') }}"></script>
+  <!-- ITAPPS local CSS styles -->
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
 </head>
     
 {% if current_user.is_authenticated %}
-<body ng-app="locationsApp" ng-controller="OverallCtrl">   
-{% raw %}
+<body ng-app="MainApp" ng-controller="OverallCtrl">   
+    
 <md-content id="body-part" flex layout="row" layout-fill>
     <md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="4"
-                style="width: 10%;" md-is-locked-open="isSideNavOpen">        
-      <md-toolbar class="md-menu-toolbar">
+                style="width: 150px;" md-is-locked-open="isSideNavOpen">  
+      <md-toolbar>
+        <div layout="column" layout-align="center end">
+          <h3 class="md-toolbar-tools">ITAPPSv0</h3>
+        </div>
+      </md-toolbar>
+{% raw %}        
+      <md-toolbar class="md-menu-toolbar layout-align-center-center">
         <div layout="column">
-            <md-menu-bar>
-              <md-menu md-position-mode="cascade">
-                <button aria-label="Open menu" ng-click="$mdMenu.open($event)">
-                  Organizations
+            <md-menu-bar>    
+              <!-- Form top/Level 1 menu items -->
+              <md-menu md-position-mode="cascade" ng-repeat="l1_menu in menu_struct">
+                <button aria-label="Open menu" ng-click="$mdMenu.open()" style="width: 100px; height: 30px;">
+                  {{ l1_menu.name }}
                 </button>
                 <md-menu-content width="3">
-                  <md-menu-item ng-repeat="org in organizations">
-                    <md-menu class="nested-menu">
-                      <md-button ng-click="onClick(org.department)">{{ org.department }}</md-button>
-                      <md-menu-content width="3">
-                        <md-menu-item ng-repeat="manager in org.managers">
-                          <md-menu>
-                            <md-button ng-click="onClick(manager.name)">{{ manager.name }}</md-button>
-                            <md-menu-content width="2">
-                              <md-menu-item ng-repeat="person in manager.reports">
-                                <md-button ng-click="onClick(person.name)">{{ person.name }}</md-button>
-                              </md-menu-item>
-                            </md-menu-content>
-                          </md-menu>
+
+                  <!-- Form level 1 menu items -->
+                  <md-menu-item ng-repeat="l2_menu in l1_menu.submenu">
+                    <span ng-switch on="l2_menu.submenu">
+                        
+                      <!-- Case when Level 2 submenu is empy -->
+                      <div ng-switch-when="">
+                        <md-menu-item>
+                          <md-button ng-click="onClick(l2_menu.name)" ng-href="{{l2_menu.url}}">{{ l2_menu.name }}</md-button>
                         </md-menu-item>
-                      </md-menu-content>
-                    </md-menu>
+                      </div>
+                      
+                      <!-- Case when Level 2 submenu is NOT empy -->
+                      <div ng-switch-default>
+                        <md-menu class="nested-menu">
+                          <md-button ng-click="onClick(l2_menu.name)" ng-href="{{l2_menu.url}}">{{ l2_menu.name }}</md-button>
+                          <md-menu-content width="3">
+                              
+                            <!-- Form level 3 menu items -->
+                            <md-menu-item ng-repeat="l3_menu in l2_menu.submenu">
+                              <span ng-switch on="l3_menu.submenu">
+                                  
+                                <!-- Case when Level 3 submenu is empy -->
+                                <div ng-switch-when="">              
+                                  <md-menu-item>
+                                    <md-button ng-click="onClick(l3_menu.name)" ng-href="{{l3_menu.url}}">{{ l3_menu.name }}</md-button>
+                                  </md-menu-item>                                
+                                </div>
+                                  
+                                <!-- Case when Level 3 submenu is NOT empy -->
+                                <div ng-switch-default>
+                                  <md-menu class="nested-menu">
+                                    <md-button ng-click="onClick(l3_menu.name)" ng-href="{{l3_menu.url}}">{{ l3_menu.name }}</md-button>
+                                    <md-menu-content width="3">
+                                    
+                                      <!-- Form level 4 menu items -->
+                                      <md-menu-item ng-repeat="l4_menu in l3_menu.submenu">
+                                        <md-button ng-click="onClick(l4_menu.name)" ng-href="{{l4_menu.url}}">{{ l4_menu.name }}</md-button>
+                                      </md-menu-item>
+                                    </md-menu-content>
+                                  </md-menu>
+                                </div>
+                              </span>
+                            </md-menu-item>
+                          </md-menu-content>
+                        </md-menu>
+                      </div>
+                    </span>
                   </md-menu-item>
                 </md-menu-content>
               </md-menu>
@@ -66,18 +114,22 @@
         </div>
       </md-toolbar>
     </md-sidenav>
+    
+  <md-content id="body-part" flex layout="column" layout-fill>    
+    <div layout="row">
+      <div class="col-1" align="left" style="padding-left: 0px;">
+        <button type="button" class="btn btn-light btn-sm" ng-click="toggleLeft()">
+          <md-icon ng-bind="menuIconVariable"></md-icon>
+        </button>   
+      </div>
+    </div>
 {% endraw %}
-    
-  <div>
-    <button type="button" class="btn btn-light btn-lg" ng-click="toggleLeft()">
-      SideNav
-    </button>   
-  </div>
-    
-{% block app_content %} 
-  <div ng-view flex style="padding: 0px;"></div>
-{% endblock %}
-<md-content>
+      
+    {% block app_content %} 
+    <div ng-view flex style="padding: 0px;"></div>
+    {% endblock %}
+  </md-content>
+</md-content>
 {% else %}
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 0px;">
@@ -102,7 +154,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<!-- ITAPS Script -->
-<script type="text/javascript" src="{{ url_for('static', filename='js/itapps_v0.js') }}"></script>
 </body>
 </html>

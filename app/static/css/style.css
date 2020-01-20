@@ -1,0 +1,10 @@
+.md-chips {
+    font-size: 12px
+}
+.md-chips md-chip {
+    border-radius: 3px;
+}
+.md-chips md-chip md-chip-content md-chip-remove-container md-icon {
+        height: 14px;
+        width: 14px
+}

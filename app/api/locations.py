@@ -5,7 +5,7 @@ from py2neo import Graph, Node, Relationship, NodeMatcher
 
 from . import api
 from . import errors
-from . import graph_templates
+from .structs import locations as loactions_struct
 
 # initiate graph
 graph = None
@@ -69,6 +69,7 @@ def get_location(id):
         return errors.error_response(404, message="Location node with id '{}' not found in databse".format(id))
     
 @api.route('/api/locations/create', methods=['POST'])
+@token_auth.login_required
 def create_location():
     data = request.get_json() or {}
     ret = {"Message": "", "Status": ""}
@@ -91,10 +92,12 @@ def create_location():
     return jsonify(ret)
     
 @api.route('/api/locations/templates', methods=['GET'])
+@token_auth.login_required
 def get_location_create_form():
-    return jsonify(graph_templates.location_node_base)
+    return jsonify(loactions_struct.nodes["location_node_base"])
 
 @api.route('/api/locations/delete', methods=['POST'])
+@token_auth.login_required
 def delete_location():
     data = request.get_json() or {}
     ret = {"Message": "", "Status": ""}

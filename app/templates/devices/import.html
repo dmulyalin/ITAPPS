@@ -1,0 +1,79 @@
+{% raw %}
+<div class="row align-items-center" 
+     style="margin-bottom: 5px; position: absolute; top: 0px; right: 150px;" 
+     id="pageControls">
+  <div class="col-4 offset-md-8 text-right">
+      <!--submit button-->
+      <md-button type="submit" ng-click="SubmitImportData()">Submit Import</md-button>
+  </div>
+</div>
+
+<md-content>
+  <md-nav-bar md-selected-nav-item="currentNavItem"
+              nav-bar-aria-label="navigation links">
+    <md-nav-item md-nav-click="" name="device-import-csv">CSV</md-nav-item>
+    <md-nav-item md-nav-click="" name="device-import-config">Config</md-nav-item>
+    <md-nav-item md-nav-click="" name="device-import-config">Json</md-nav-item>
+  </md-nav-bar>
+  <div class="md-padding" ng-switch on="currentNavItem">
+    <div ng-switch-when="device-import-config"> 
+        Device import from config tab here
+    </div>
+    <div ng-switch-when="device-import-json"> 
+        Device import from json tab here
+    </div>
+    <div ng-switch-default>         
+      <div class="container-fluid">
+        
+        <!-- Nodes section -->
+        <div class="row justify-content-between">
+          <div class="col-4">
+            <label for="csv_data">Nodes CSV Data</label>
+          </div>
+          <div class="col-4">
+            <md-select ng-model="node_template" placeholder="Template" class="md-no-underline" style="margin: 0px;"
+                       ng-change="load_device_model(node_template)">
+              <md-option ng-repeat="node_template in node_templates" ng-value="node_template">{{ node_template }}</md-option>
+            </md-select>
+          </div>
+        </div>
+        <div class="row align-items-center">
+          <textarea class="form-control" rows="3" id="csv_data"
+                    ng-model="device_node_model.csv.nodes" md-select-on-focus
+                    aria-label="Notes"></textarea>
+        </div>
+        <div>
+          <span ng-repeat="item in device_node_model.properties.mandatory">
+            {{ item.propertyName }}* - {{ item.propertyInfo }}
+            <br>
+          </span>
+          <span ng-repeat="item in device_node_model.properties.optional">
+            {{ item.propertyName }} - {{ item.propertyInfo }}
+            <br>
+          </span>
+        </div>
+          
+        <!-- Links Section -->
+        <br>
+        <div class="row align-items-center">
+          <div class="col">
+            <label for="csv_data">Relataionships CSV Data</label>
+          </div>
+          <div class="col">
+            templates select here
+          </div>
+        </div>
+        <div class="row align-items-center">
+          <textarea class="form-control" rows="3" id="csv_data"
+                    ng-model="importData.csv.relationships" md-select-on-focus
+                    aria-label="Notes"></textarea>
+        </div>
+        <div ng-repeat="(key, help) in importData.csv_fields_info">
+          {{ key }} - {{ help }}
+        </div>
+          
+      </div>
+    </div>
+  </div>
+</md-content>
+{% endraw %}
