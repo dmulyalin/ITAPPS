@@ -42,7 +42,7 @@
             <th width="1%" style="text-align:center;">
               <input type="checkbox" aria-label="..." ng-model="devices.checkboxAll" ng-change="checkboxAll()">
             </th>
-            <th width="15%">Name</th>
+            <th width="15%">Hostname</th>
             <th width="35%">Description</th>
           </tr>
           </thead>
@@ -51,51 +51,75 @@
             <td style="text-align:center;">
               <input type="checkbox" aria-label="..." ng-model="device.checkbox">
             </td>
-            <td> <a href="#!/devices/{{device.id}}">{{device.name}}</a></td>
+            <td> <a href="#!/devices/{{device.id}}">{{device.hostname}}</a></td>
             <td>{{device.description}}</td>
           </tr>
           </tbody>
         </table>
       </div>
-      <div class="row" id="tableControls">
-        table pagination here
+        
+      <!-- Table pagination section -->
+      <div class="row" id="tableControls">    
+          
+        <md-input-container class="md-block" flex="10">
+          <label>Rows: </label>
+          <md-select ng-model="pagination.rows_per_page" class="md-no-underline" ng-change="rowsPerPageSelector()">
+            <md-option ng-repeat="rows_per_page_option in pagination.rows_per_page_options" ng-value="{{rows_per_page_option}}">
+              {{ rows_per_page_option }}
+            </md-option>
+          </md-select>
+        </md-input-container>
+          
+        <md-input-container class="md-block" flex="10">
+          <label>Page: </label>
+          <md-select ng-model="pagination.page" class="md-no-underline" ng-change="pageNumberSelector()">
+            <md-option ng-repeat="page in pagination.pages" ng-value="{{ page }}">
+              {{ page }}
+            </md-option>
+          </md-select>
+        </md-input-container>
+         
+        <label>Overall: {{ pagination.overall }}</label>
+          
+        <button ng-click="paginatePrev()"> prev </button> 
+        <button ng-click="paginateNext()"> next </button>
       </div>
     </div>
      
     <!-- Search section -->
     <div class="col-3" id="searchEngine">
 
-<form name="SearchForm">
-  <div class="card bg-light">
-    <div class="card-header" style="padding: 5px;">Search Labels</div>
-    <div class="card-body" style="padding: 5px;">
-      <md-chips ng-model="search_template.labels" readonly="false"
-                md-removable="true" md-enable-chip-edit="true"
-                placeholder="Add labels" secondary-placeholder="+add">
-      </md-chips>
-    </div>
-  </div>
-    
-  <div class="card bg-light mb-3">
-    <div class="card-header">Search Properties</div>         
-          <div layout-gt-sm="row" ng-repeat="property in search_template.properties">
-              
-            <!-- property name field -->
-            <md-input-container class="md-block" flex="30">
-              <input ng-model="property.propertyName" placeholder="Name">
-            </md-input-container>
-              
-            <!-- property value field -->
-            <md-input-container class="md-block" flex="60">
-              <input name="type" ng-model="property.propertyValue" placeholder="Value">
-            </md-input-container>
-            <button type="button" class="btn btn-danger" style="height: 40px; margin-top: 10px; margin-left: 5px;" 
-                    ng-click="removeSearchProperty(property)"> - </button>
+      <form name="SearchForm">
+        <div class="card bg-light">
+          <div class="card-header" style="padding: 5px;">Search Labels</div>
+          <div class="card-body" style="padding: 5px;">
+            <md-chips ng-model="search_template.labels" readonly="false"
+                      md-removable="true" md-enable-chip-edit="true"
+                      placeholder="Add labels" secondary-placeholder="+add">
+            </md-chips>
           </div>
-        <!-- button to add new optional property -->
-        <md-button class="md-raised" ng-click="addSearchProperty()">Add</md-button>
-  </div>
-</form>
+        </div>
+          
+        <div class="card bg-light mb-3">
+          <div class="card-header">Search Properties</div>         
+                <div layout-gt-sm="row" ng-repeat="property in search_template.properties">
+                    
+                  <!-- property name field -->
+                  <md-input-container class="md-block" flex="30">
+                    <input ng-model="property.propertyName" placeholder="Name">
+                  </md-input-container>
+                    
+                  <!-- property value field -->
+                  <md-input-container class="md-block" flex="60">
+                    <input name="type" ng-model="property.propertyValue" placeholder="Value">
+                  </md-input-container>
+                  <button type="button" class="btn btn-danger" style="height: 40px; margin-top: 10px; margin-left: 5px;" 
+                          ng-click="removeSearchProperty(property)"> - </button>
+                </div>
+              <!-- button to add new optional property -->
+              <md-button class="md-raised" ng-click="addSearchProperty()">Add</md-button>
+        </div>
+      </form>
 
     </div>
   </div>

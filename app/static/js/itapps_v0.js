@@ -56,11 +56,14 @@ MainApp.factory('FUNCTIONS', function($http){
         cache: true
       }).then(callback, null);
     },
-    list_devices: function (callback){
+    list_devices: function (pagination, callback){
       $http({
         method: 'GET',
         url: 'http://192.168.64.128:9000/api/devices?brief=True',
-        headers: {"Authorization": "Bearer hmuWG750nIxTHEfTIjLtjviX6udcURR2"},
+        headers: {
+            "Authorization": "Bearer hmuWG750nIxTHEfTIjLtjviX6udcURR2"
+        },
+        params: pagination,
         cache: true
       }).then(callback, null);
     },
@@ -311,21 +314,60 @@ MainApp.controller('OverallCtrl', function ($scope, $mdSidenav, FUNCTIONS) {
 });
 
 MainApp.controller('DevicesListCtrl', function ($scope, $window, FUNCTIONS){
-  FUNCTIONS.list_devices(function(response) {
-    $scope.devices = response.data.data;
-    for (var i = 0; i < $scope.devices.length; i++) {
-            $scope.devices[i].checkbox = false
-        }      
-    // save Devices in shared data so that can access it from other controllers
-    FUNCTIONS.shared_data.devices = $scope.devices
-  });
+  // table pagination section functions
+  $scope.pagination = {
+      rows_per_page: 10,
+      rows_per_page_options: [5,10,15,30,50,80,100],
+      page: 1,
+      pages: [1,2,3,4,5,6],
+      overall: 58,
+      order_by: "hostname"
+  };
+  $scope.paginatePrev = function() {
+      if ($scope.pagination.page != 1) {
+          $scope.pagination.page -= 1 
+          $scope.list_devices();
+      } 
+  }    
+  $scope.paginateNext = function() {
+      if  ($scope.pagination.page != $scope.pagination.pages.length) {
+          $scope.pagination.page += 1 
+          $scope.list_devices();
+      }
+  } 
+  $scope.pageNumberSelector = function() {
+      // reload devices list using new page value
+      $scope.list_devices();
+  }
+  $scope.rowsPerPageSelector = function() {
+      // reload devices list using rows per page value
+      $scope.list_devices();
+  }
+    
+  // function to list table content
+  $scope.list_devices = function() {
+    FUNCTIONS.list_devices($scope.pagination, function(response) {
+      // console.log(response)
+      $scope.devices = response.data.data;
+      $scope.pagination.overall = response.data.meta.overall
+      $scope.pagination.pages = response.data.meta.pages
+      // console.log(response.data)
+      for (var i = 0; i < $scope.devices.length; i++) {
+              $scope.devices[i].checkbox = false
+          }      
+      // save Devices in shared data so that can access it from other controllers
+      FUNCTIONS.shared_data.devices = $scope.devices
+    });
+  }
+    
   // function to set checkbox selected to all items in the table if header checkbox checkecd
   $scope.checkboxAll = function() {
     for (var i = 0; i < $scope.devices.length; i++) {
             $scope.devices[i].checkbox = $scope.devices.checkboxAll
         }        
   };
-  // define search criterias section
+    
+  // search criterias section functions
   $scope.search_template = {
       labels: ["device"],
       properties: [],
@@ -337,7 +379,12 @@ MainApp.controller('DevicesListCtrl', function ($scope, $window, FUNCTIONS){
   $scope.removeSearchProperty = function(property) {
       var itemIndex = $scope.search_template.properties.indexOf(property)
       $scope.search_template.properties.splice(itemIndex, 1)
-  };
+  };      
+    
+  // page init
+  $scope.list_devices();
+
+// end of this controller
 });
 
 MainApp.controller('DeviceDetailCtrl', function ($scope, $routeParams, FUNCTIONS){

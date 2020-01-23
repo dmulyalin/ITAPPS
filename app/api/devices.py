@@ -28,26 +28,46 @@ def get_devices():
     # string of the request, using the defaults of 1 and 10 respectively if they are 
     # not defined. The per_page has additional logic that caps it at 100.
     page = request.args.get('page', 1, type=int)
-    per_page = min(request.args.get('per_page', 10, type=int), 100)
+    rows_per_page = min(request.args.get('rows_per_page', 30, type=int), 100)
     brief = request.args.get('brief', False, type=bool)
+    order_by = request.args.get('order_by', "id", type=str)
     
     # get Devices from database
     devices = []
+    skip = rows_per_page * (page - 1)
+    query_count = "MATCH (n:Device) RETURN count(n)"
+    query_brief = """
+        MATCH (n:Device) 
+        RETURN n.hostname as hostname, n.description as description, ID(n) as id
+        ORDER BY n.{order_by}
+        SKIP {skip} 
+        LIMIT {limit}
+    """
+    query_details = "MATCH (n:Device) RETURN n"
     if brief:
-        devices_nodes = graph.run("MATCH (n:Device) RETURN n.hostname as name, n.description as description, ID(n) as id").data()
+        devices_nodes = graph.run(query_brief.format(order_by=order_by, skip=skip, limit=rows_per_page)).data()
         devices = devices_nodes
     else:
-        devices_nodes = graph.run("MATCH (n:Device) RETURN n").data()
+        devices_nodes = graph.run(query_details).data()
         for device in devices_nodes:
             for k, v in device.items():
                 datum = dict(v.items())
                 datum["id"] = v.identity
                 devices.append(datum)
+                
+    # get overall device nodes and pages count
+    overall = graph.run(query_count).data()[0]["count(n)"]
+    pages = overall // rows_per_page + bool(overall % rows_per_page)
+    
+    # return results
     return jsonify({
         "data": devices,
         "meta": {
             "page": page,
-            "per_page": per_page
+            "rows_per_page": rows_per_page,
+            "overall": overall,
+            "order_by": order_by,
+            "pages": list(range(1, pages+1))
         }
     })
 
