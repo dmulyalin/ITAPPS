@@ -167,3 +167,32 @@ def import_devices():
                 graph.merge(device_node, "Device", "hostname")
                 ret["Message"] += "device created successfully: {}; ".format(node["hostname"])
     return jsonify(ret)
+
+
+@api.route('/api/devices/3d/graph_data', methods=['GET'])
+@token_auth.login_required
+def get_devices_3d_graph():
+    """
+    Return devices graph structure
+    """
+    if graph is None:
+        get_graph()
+
+    devices_graph = {
+        "nodes": [],
+        "links": []
+    };
+        
+    query_nodes_with_details = "MATCH (n:Device) RETURN n"
+    devices_nodes = graph.run(query_nodes_with_details).data()
+    for device in devices_nodes:
+        for k, v in device.items():
+            datum = dict(v.items())
+            datum["id"] = v.identity
+            devices_graph["nodes"].append(datum)
+    
+    # return results
+    return jsonify({
+        "data": devices_graph,
+        "meta": {}
+    })

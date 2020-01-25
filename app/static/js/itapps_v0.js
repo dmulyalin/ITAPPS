@@ -21,7 +21,7 @@ MainApp.config(function($routeProvider) {
     }).
     when('/devices/3d', {
       templateUrl: '/devices/devices_3d.html',
-      controller: 'DevicesListCtrl'
+      controller: 'Devices3dCtrl'
     }).
     when('/devices/create', {
       templateUrl: '/devices/create.html',
@@ -192,6 +192,18 @@ MainApp.factory('FUNCTIONS', function($http){
         data: data,
         cache: false
       }).then(callback);
+    },
+    get_devices_graph: function (parameters, callback){
+      $http({
+        method: 'GET',
+        url: 'http://192.168.64.128:9000/api/devices/3d/graph_data',
+        headers: {
+            "Authorization": "Bearer hmuWG750nIxTHEfTIjLtjviX6udcURR2",
+            'Content-Type': 'application/json; charset=utf-8'
+        },
+        params: parameters,
+        cache: true
+      }).then(callback, null);
     }
       
 // paste more functions ABOVE this line
@@ -387,9 +399,41 @@ MainApp.controller('DevicesListCtrl', function ($scope, $window, FUNCTIONS){
     
   // page init
   $scope.list_devices();
-
+    
 // end of this controller
 });
+
+MainApp.controller('Devices3dCtrl', function ($scope, $window, FUNCTIONS){
+  $scope.parameters = [];
+  $scope.gData = null;
+    
+  $scope.show_3d_staff = function() {
+    //query data from server
+    FUNCTIONS.get_devices_graph($scope.parameters, function(response) {
+      console.log(response)
+      $scope.gData = response.data.data;
+      console.log($scope.gData)
+    //display graph 
+    const Graph = ForceGraph3D()
+      (document.getElementById('3d-graph'))
+        .nodeLabel('hostname')
+        .onNodeDragEnd(node => {
+          node.fx = node.x;
+          node.fy = node.y;
+          node.fz = node.z;
+        })
+        .width(1000)
+        .height(500)
+        .graphData($scope.gData);
+    });
+  }
+    
+  // page init
+  $scope.show_3d_staff();
+    
+// end of this controller
+});
+
 
 MainApp.controller('DeviceDetailCtrl', function ($scope, $routeParams, FUNCTIONS){
   FUNCTIONS.find_device($routeParams.deviceId, function(device) {

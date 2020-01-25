@@ -1,4 +1,4 @@
-from flask import abort, flash, redirect, render_template, url_for, request
+from flask import abort, flash, redirect, render_template, url_for, request, send_from_directory
 from flask_login import login_required, current_user
 
 from . import devices
@@ -14,6 +14,12 @@ def devices_table_view():
 def devices_3d_view():
     # Render the devices 3D view template
     return render_template('devices/devices_3d.html', title="Devices 3D")
+
+@devices.route('/devices/devices_3d.js')
+@login_required
+def devices_3d_view_js():
+    # Render the devices 3D view template
+    return send_from_directory('/root/ITAPPS-2/app/static/js', "devices_3d.js")
 
 @devices.route('/devices/create.html', methods=['GET'])
 @login_required
