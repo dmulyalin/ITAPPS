@@ -15,8 +15,12 @@ MainApp.config(function($routeProvider) {
       templateUrl: '/locations/location.html',
       controller: 'LocationDetailCtrl'
     }).
-    when('/devices', {
-      templateUrl: '/devices/devices.html',
+    when('/devices/table', {
+      templateUrl: '/devices/devices_table.html',
+      controller: 'DevicesListCtrl'
+    }).
+    when('/devices/3d', {
+      templateUrl: '/devices/devices_3d.html',
       controller: 'DevicesListCtrl'
     }).
     when('/devices/create', {

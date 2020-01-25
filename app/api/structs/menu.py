@@ -29,7 +29,7 @@ main = [
             {
                 "name": "Devices",
                 "submenu": [],
-                "url": "#!/devices"
+                "url": "#!/devices/table"
             },
             {
                 "name": "Interfaces",

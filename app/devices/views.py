@@ -3,11 +3,17 @@ from flask_login import login_required, current_user
 
 from . import devices
 
-@devices.route('/devices/devices.html')
+@devices.route('/devices/devices_table.html')
 @login_required
-def list_devices():
-    # Render the devices dashboard template
-    return render_template('devices/devices.html', title="Devices")
+def devices_table_view():
+    # Render the devices table view template
+    return render_template('devices/devices_table.html', title="Devices Table")
+
+@devices.route('/devices/devices_3d.html')
+@login_required
+def devices_3d_view():
+    # Render the devices 3D view template
+    return render_template('devices/devices_3d.html', title="Devices 3D")
 
 @devices.route('/devices/create.html', methods=['GET'])
 @login_required
