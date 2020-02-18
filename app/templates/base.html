@@ -19,9 +19,11 @@
   <script src="{{ url_for('static', filename='js/angularjs/1.7.6/angular-aria.min.js') }}"></script>
   <script src="{{ url_for('static', filename='js/angularjs/1.7.6/angular-messages.min.js') }}"></script>
     
+  <!-- d3-force-3d library script -->  
+  <script src="//unpkg.com/3d-force-graph"></script>
     
-<script src="//unpkg.com/3d-force-graph"></script>
-    
+  <!-- file upload library - concatenated flow.js + ng-flow libraries 
+  <script src="{{ url_for('static', filename='js/ng-flow/ng-flow-standalone.min.js') }}"></script>  -->
     
   <!-- Angular Material Library CDN version:
   <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js">DONE</script>
@@ -38,7 +40,10 @@
     
   <!-- bootstrap 4 -->
   <!-- Latest compiled and minified CSS -->
+  <!-- CDN version
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap/4.4.1/bootstrap.min.css') }}">
 
   <!-- ITAPPS Script -->
   <script type="text/javascript" src="{{ url_for('static', filename='js/itapps_v0.js') }}"></script>
@@ -150,12 +155,16 @@
        
 <!-- Optional Bootstrap 4 JavaScript -->
 <!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
 <!-- Popper JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> 
 <!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> 
     
-
+<!--
+<script src="{{ url_for('static', filename='js/jquery/3.4.1/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/popper/1.16.0/popper.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap/4.4.1/bootstrap.min.js') }}"></script>
+-->
 </body>
 </html>

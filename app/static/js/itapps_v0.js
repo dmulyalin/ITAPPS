@@ -2,6 +2,10 @@ var MainApp = angular.module('MainApp', ['ngRoute', 'ngMaterial', 'ngMessages'])
 
 MainApp.config(function($routeProvider) {
   $routeProvider.
+    when('/frontpage/', {
+      templateUrl: '/front_page.html',
+      controller: 'frontPageController'
+    }).
     when('/locations', {
       templateUrl: '/locations/list.html',
       controller: 'LocationsListCtrl'
@@ -37,7 +41,7 @@ MainApp.config(function($routeProvider) {
       controller: 'DeviceDetailCtrl'
     }).
     otherwise({
-      redirectTo: '/'
+      redirectTo: '/frontpage'
     });
 });
    
@@ -406,6 +410,7 @@ MainApp.controller('DevicesListCtrl', function ($scope, $window, FUNCTIONS){
 MainApp.controller('Devices3dCtrl', function ($scope, $window, FUNCTIONS){
   $scope.parameters = [];
   $scope.gData = null;
+  $scope.highlightNodes = [];
     
   $scope.show_3d_staff = function() {
     //query data from server
@@ -424,7 +429,20 @@ MainApp.controller('Devices3dCtrl', function ($scope, $window, FUNCTIONS){
         })
         .width(1000)
         .height(500)
+        .nodeColor(node => $scope.highlightNodes.indexOf(node) === -1 ? 'rgba(0,255,255,0.6)' : 'rgb(255,0,0,1)')
+        .onNodeClick(function(node) {
+          if ($scope.highlightNodes.indexOf(node) === -1) {
+              $scope.highlightNodes.push(node)
+          }
+          else {
+              nodeIndex = $scope.highlightNodes.indexOf(node)
+              $scope.highlightNodes.splice(nodeIndex, 1)
+          }
+          // trigger update of highlighted objects in scene
+          Graph.nodeColor(Graph.nodeColor())
+        })
         .graphData($scope.gData);
+        
     });
   }
     
@@ -513,8 +531,31 @@ MainApp.controller('DeviceImportCtrl', function ($scope, $window, FUNCTIONS) {
       })
   };
     
+  //// init flow.js file upload library
+  //$scope.initConfigImport = function() {
+  //  console.log("init upload")
+  //  $scope.flow = new Flow();
+  //  $scope.flow.assignBrowse(document.getElementById('uplodFileButton'));
+  //  console.log(document.getElementById('uplodFileButton'))
+  //  $scope.flow.on('fileAdded', function(file, event){
+  //      console.log(file, event);
+  //  });
+  //}
+  //  
+  //$scope.$on('$viewContentLoaded', function(event)
+  //{ 
+  //  console.log('view loaded: ', event)
+  //
+  // });
+    
+    
   // controller initialization code:
-  $scope.get_node_templates();   
+  $scope.get_node_templates();  
 
+// end of this controller
+});
+
+
+MainApp.controller('frontPageController', function ($scope, $window, FUNCTIONS) {    
 // end of this controller
 });

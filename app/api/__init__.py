@@ -7,4 +7,4 @@ from flask import Blueprint
 
 api = Blueprint('api', __name__)
 
-from . import devices, locations, errors, tokens, base
+from . import devices, locations, errors, tokens, base, upload

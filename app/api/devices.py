@@ -190,6 +190,10 @@ def get_devices_3d_graph():
             datum = dict(v.items())
             datum["id"] = v.identity
             devices_graph["nodes"].append(datum)
+            
+    query_links_with_details = "MATCH (n)-->(m) RETURN id(n) as source, id(m) as target"
+    links = graph.run(query_links_with_details).data()
+    devices_graph["links"] = links
     
     # return results
     return jsonify({

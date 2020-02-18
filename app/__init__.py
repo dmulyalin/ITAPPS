@@ -19,14 +19,6 @@ login_manager = LoginManager(app)
 login_manager.login_message = "You must be logged in to access this page."
 login_manager.login_view = "auth.login"
 
-#@app.after_request # blueprint can also be app~~
-#def after_request(response):
-#    response.headers.add("Access-Control-Allow-Origin", "*")
-#    response.headers.add("Access-Control-Allow-Headers", "*")
-#    response.headers.add("Access-Control-Allow-Methods", "*")
-#    print(response)
-#    return response
-
 # databses staff init
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
