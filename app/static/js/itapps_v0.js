@@ -53,9 +53,47 @@ MainApp.config(function($mdThemingProvider) {
     .warnPalette('red');
 });
     
+// custom directives
+//
+// File upload directives
+MainApp.directive('addFile', function (FUNCTIONS) {
+    return {
+        restrict: "A",
+        link: function ($scope, element, attr) {
+            element.bind('change', function () {
+                var formData = new FormData();
+                formData.append(element[0].form.elements[0].name, element[0].form.elements[0].files[0]);
+                // add files info to $scope
+                $scope.device_node_model.config.files.push({
+                    fileData: formData,
+                    fileName: element[0].form.elements[0].files[0].name
+                })
+                //FUNCTIONS.upload(formData);
+            });
+
+        }
+    };
+});
+
+// factory functions
 MainApp.factory('FUNCTIONS', function($http){
   return {
     shared_data: {},
+    upload: function (data) {
+        $http({
+            url: 'http://192.168.64.128:9000/api/misc/upload',
+            method: "POST",
+            data: data,
+            headers: {
+                'Content-Type': undefined,
+                "Authorization": "Bearer hmuWG750nIxTHEfTIjLtjviX6udcURR2"
+            }
+        }).then(function(response) {
+          console.log("Success", response.status, response.data)
+        }, function(response) {
+          console.log("Error", response.status, response.data)
+      });
+    },
     list: function (callback){
       $http({
         method: 'GET',
@@ -149,6 +187,14 @@ MainApp.factory('FUNCTIONS', function($http){
       $http({
         method: 'GET',
         url: 'http://192.168.64.128:9000/api/devices/templates?template_name=_list_all_',
+        headers: {"Authorization": "Bearer hmuWG750nIxTHEfTIjLtjviX6udcURR2"},
+        cache: true
+      }).then(callback);
+    },
+    get_ttp_templates: function(callback){
+      $http({
+        method: 'GET',
+        url: 'http://192.168.64.128:9000/api/misc/ttp_templates?template_name=_list_all_',
         headers: {"Authorization": "Bearer hmuWG750nIxTHEfTIjLtjviX6udcURR2"},
         cache: true
       }).then(callback);
@@ -491,11 +537,19 @@ MainApp.controller('DeviceImportCtrl', function ($scope, $window, FUNCTIONS) {
   $scope.device_node_model = {};
     
   // function to load all available device node templates from server
-  $scope.get_node_templates = function() {      
+  $scope.get_node_csv_templates = function() {      
       FUNCTIONS.get_device_templates(function(response) {
           $scope.node_templates = response.data;
           $scope.node_template = $scope.node_templates[0]
           $scope.load_device_model(template_name=$scope.node_template);
+        });
+  };
+    
+  // function to load all available TTP templates from server
+  $scope.get_ttp_templates = function() {      
+      FUNCTIONS.get_ttp_templates(function(response) {
+          $scope.ttp_templates = response.data["ttp_templates"];
+          $scope.ttp_template = null;
         });
   };
     
@@ -505,7 +559,11 @@ MainApp.controller('DeviceImportCtrl', function ($scope, $window, FUNCTIONS) {
         $scope.device_node_model = response.data;
         $scope.device_node_model.csv={nodes:"", relationships:""};
         $scope.device_node_model.json={};
-        $scope.device_node_model.config={};
+        $scope.device_node_model.config = {
+            text: [""],
+            files: []
+        }
+        $scope.device_node_model.ttp_template = ""
         var mandatoryProps = []; var optionalProps = [];
         // get mandatory properties:
         for (var i = 0; i < $scope.device_node_model.properties.mandatory.length; i++) {
@@ -520,37 +578,35 @@ MainApp.controller('DeviceImportCtrl', function ($scope, $window, FUNCTIONS) {
       });
   };    
     
-  $scope.SubmitImportData = function() {
+  $scope.SubmitImportData = function(element) {
+      // upload files if any
+      for (var i = 0; i < $scope.device_node_model.config.files.length; i++) {
+        FUNCTIONS.upload($scope.device_node_model.config.files[i]["fileData"])
+        $scope.device_node_model.config.files[i]["fileData"] = ""
+      };
+      console.log($scope.device_node_model)
       FUNCTIONS.import_devices($scope.device_node_model, function(response) {
         // redirect to locations page and reload
         $window.location.href = "#!/devices"
         // log response to user
         $window.alert(JSON.stringify(response.data) + "  status:" + JSON.stringify(response.status))
         // reload current page to display new items
-        $window.location.reload()
+        //$window.location.reload()
       })
-  };
+  };    
     
-  //// init flow.js file upload library
-  //$scope.initConfigImport = function() {
-  //  console.log("init upload")
-  //  $scope.flow = new Flow();
-  //  $scope.flow.assignBrowse(document.getElementById('uplodFileButton'));
-  //  console.log(document.getElementById('uplodFileButton'))
-  //  $scope.flow.on('fileAdded', function(file, event){
-  //      console.log(file, event);
-  //  });
-  //}
-  //  
-  //$scope.$on('$viewContentLoaded', function(event)
-  //{ 
-  //  console.log('view loaded: ', event)
-  //
-  // });
-    
+ //$scope.UploadButton = function($event) {
+ //    var element = angular.element($event.target)
+ //    var formData = new FormData();
+ //    formData.append(element[0].form.elements[0].name, element[0].form.elements[0].files[0]);
+ //    //FUNCTIONS.upload(formData);
+ //    $scope.device_node_model.config.files.push(element[0].form.elements[0].files[0])
+ //    //console.log($scope.device_node_model)
+ // };    
     
   // controller initialization code:
-  $scope.get_node_templates();  
+  $scope.get_node_csv_templates();  
+  $scope.get_ttp_templates()
 
 // end of this controller
 });

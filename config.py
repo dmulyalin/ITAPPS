@@ -21,6 +21,9 @@ class DevelopmentConfig(Config):
             'sqlite:///' + os.path.join(basedir, 'app.db')
     FLASK_APP = "run.py"   
     BASEDIR = basedir
+    NEO4J_SERVER_IP = "192.168.64.128"
+    NEO4J_SERVER_USER = "neo4j"
+    NEO4J_SERVER_PASSWORD = "Kotr5rik"
 
 class ProductionConfig(Config):
     """

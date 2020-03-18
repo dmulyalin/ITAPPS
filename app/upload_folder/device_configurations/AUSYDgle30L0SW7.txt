@@ -1,0 +1,1675 @@
+AUSYDgle30L0SW7#   show cdp neighbors detail 
+-------------------------
+Device ID: SEP0019E8926394
+Entry address(es): 
+  IP address: 10.225.44.111
+Platform: Cisco IP Phone 7941,  Capabilities: Host Phone 
+Interface: FastEthernet0/20,  Port ID (outgoing port): Port 1
+Holdtime : 138 sec
+
+Version :
+SCCP41.9-4-2SR3-1S
+
+advertisement version: 2
+Duplex: full
+Power drawn: 6.300 Watts
+Power request id: 25492, Power management id: 3
+Power request levels are:6300 0 0 0 0 
+Management address(es): 
+
+-------------------------
+Device ID: SEP000FF7D4B43D
+Entry address(es): 
+  IP address: 10.225.44.53
+Platform: Cisco IP Phone 7960,  Capabilities: Host Phone 
+Interface: FastEthernet0/44,  Port ID (outgoing port): Port 1
+Holdtime : 138 sec
+
+Version :
+P0030801SR02
+
+advertisement version: 2
+Duplex: full
+Power drawn: 6.300 Watts
+Management address(es): 
+
+-------------------------
+Device ID: SEP001F9EAB66D8
+Entry address(es): 
+  IP address: 10.225.44.171
+Platform: Cisco IP Phone 7941,  Capabilities: Host Phone 
+Interface: FastEthernet0/16,  Port ID (outgoing port): Port 1
+Holdtime : 143 sec
+
+Version :
+SCCP41.9-4-2SR3-1S
+
+advertisement version: 2
+Duplex: full
+Power drawn: 6.300 Watts
+Power request id: 26328, Power management id: 3
+Power request levels are:6300 0 0 0 0 
+Management address(es): 
+
+-------------------------
+Device ID: SEP0018183E4273
+Entry address(es): 
+  IP address: 10.225.44.51
+Platform: Cisco IP Phone 7940,  Capabilities: Host Phone 
+Interface: FastEthernet0/45,  Port ID (outgoing port): Port 1
+Holdtime : 164 sec
+
+Version :
+P0030801SR02
+
+advertisement version: 2
+Duplex: full
+Power drawn: 6.300 Watts
+Management address(es): 
+
+-------------------------
+Device ID: SEPC40ACB4D3EE6
+Entry address(es): 
+  IP address: 10.225.44.154
+Platform: Cisco IP Phone 9971,  Capabilities: Host Phone 
+Interface: FastEthernet0/12,  Port ID (outgoing port): Port 1
+Holdtime : 125 sec
+
+Version :
+sip9971.9-4-2SR2-2
+          
+advertisement version: 2
+Duplex: full
+Power drawn: 12.804 Watts
+Power request id: 58945, Power management id: 5
+Power request levels are:12804 0 0 0 0 
+Management address(es): 
+
+-------------------------
+Device ID: SEP0003E32A1D55
+Entry address(es): 
+  IP address: 10.225.45.65
+Platform: Cisco IP Phone 7960,  Capabilities: Host Phone 
+Interface: FastEthernet0/40,  Port ID (outgoing port): Port 1
+Holdtime : 163 sec
+
+Version :
+P0030801SR02
+
+advertisement version: 2
+Duplex: full
+Power drawn: 6.300 Watts
+Management address(es): 
+
+-------------------------
+Device ID: SEP0017E03FA531
+Entry address(es): 
+  IP address: 10.225.44.105
+Platform: Cisco IP Phone 7941,  Capabilities: Host Phone 
+Interface: FastEthernet0/42,  Port ID (outgoing port): Port 1
+Holdtime : 134 sec
+
+Version :
+SCCP41.9-4-2SR3-1S
+
+advertisement version: 2
+Duplex: full
+Power drawn: 6.300 Watts
+Power request id: 42289, Power management id: 3
+Power request levels are:6300 0 0 0 0 
+Management address(es): 
+
+-------------------------
+Device ID: SEP001B54CAA29D
+Entry address(es): 
+  IP address: 10.225.45.29
+Platform: Cisco IP Phone 7941,  Capabilities: Host Phone 
+Interface: FastEthernet0/9,  Port ID (outgoing port): Port 1
+Holdtime : 157 sec
+
+Version :
+SCCP41.9-4-2SR3-1S
+
+advertisement version: 2
+Duplex: full
+Power drawn: 6.300 Watts
+Power request id: 41629, Power management id: 3
+Power request levels are:6300 0 0 0 0 
+Management address(es): 
+
+-------------------------
+Device ID: SEP003094C410EB
+Entry address(es): 
+  IP address: 10.225.44.39
+Platform: Cisco IP Phone 7960,  Capabilities: Host Phone 
+Interface: FastEthernet0/22,  Port ID (outgoing port): Port 1
+Holdtime : 125 sec
+
+Version :
+P0030801SR02
+
+advertisement version: 2
+Duplex: full
+Power drawn: 6.300 Watts
+Management address(es): 
+
+-------------------------
+Device ID: SEP0013C4AAC28F
+Entry address(es): 
+  IP address: 10.225.45.66
+Platform: Cisco IP Phone 7960,  Capabilities: Host Phone 
+Interface: FastEthernet0/23,  Port ID (outgoing port): Port 1
+Holdtime : 169 sec
+
+Version :
+P0030801SR02
+
+advertisement version: 2
+Duplex: full
+Power drawn: 6.300 Watts
+Management address(es): 
+
+-------------------------
+Device ID: SEPECC882115AA8
+Entry address(es): 
+  IP address: 10.225.45.1
+Platform: Cisco IP Phone 7942,  Capabilities: Host Phone 
+Interface: FastEthernet0/5,  Port ID (outgoing port): Port 1
+Holdtime : 144 sec
+
+Version :
+SCCP42.9-4-2SR3-1S
+
+advertisement version: 2
+Duplex: full
+Power drawn: 6.300 Watts
+Power request id: 23208, Power management id: 3
+Power request levels are:6300 0 0 0 0 
+Management address(es): 
+
+-------------------------
+Device ID: SEP0014F29CD162
+Entry address(es): 
+  IP address: 10.225.44.68
+Platform: Cisco IP Phone 7960,  Capabilities: Host Phone 
+Interface: FastEthernet0/36,  Port ID (outgoing port): Port 1
+Holdtime : 169 sec
+          
+Version :
+P0030801SR02
+
+advertisement version: 2
+Duplex: full
+Power drawn: 6.300 Watts
+Management address(es): 
+
+-------------------------
+Device ID: SEP0002B9EAFF61
+Entry address(es): 
+  IP address: 10.225.44.62
+Platform: Cisco IP Phone 7960,  Capabilities: Host Phone 
+Interface: FastEthernet0/28,  Port ID (outgoing port): Port 1
+Holdtime : 168 sec
+
+Version :
+P0030801SR02
+
+advertisement version: 2
+Duplex: full
+Power drawn: 6.300 Watts
+Management address(es): 
+
+-------------------------
+Device ID: SEP346288DAAC9F
+Entry address(es): 
+  IP address: 10.225.44.71
+Platform: Cisco IP Phone 9971,  Capabilities: Host Phone 
+Interface: FastEthernet0/21,  Port ID (outgoing port): Port 1
+Holdtime : 168 sec
+
+Version :
+sip9971.9-4-2SR2-2
+
+advertisement version: 2
+Duplex: full
+Power drawn: 14.389 Watts
+Power request id: 40884, Power management id: 9
+Power request levels are:14389 0 0 0 0 
+Management address(es): 
+
+-------------------------
+Device ID: SEP0017E0AA9345
+Entry address(es): 
+  IP address: 10.225.44.120
+Platform: Cisco IP Phone 7941,  Capabilities: Host Phone 
+Interface: FastEthernet0/32,  Port ID (outgoing port): Port 1
+Holdtime : 120 sec
+
+Version :
+SCCP41.9-4-2SR3-1S
+
+advertisement version: 2
+Duplex: full
+Power drawn: 6.300 Watts
+Power request id: 37701, Power management id: 3
+Power request levels are:6300 0 0 0 0 
+Management address(es): 
+
+-------------------------
+Device ID: SEP00152BB5D16F
+Entry address(es): 
+  IP address: 10.225.44.178
+Platform: Cisco IP Phone 7941,  Capabilities: Host Phone 
+Interface: FastEthernet0/25,  Port ID (outgoing port): Port 1
+Holdtime : 146 sec
+
+Version :
+SCCP41.9-4-2SR3-1S
+
+advertisement version: 2
+Duplex: full
+Power drawn: 6.300 Watts
+Power request id: 53615, Power management id: 3
+Power request levels are:6300 0 0 0 0 
+Management address(es): 
+          
+-------------------------
+Device ID: SEP58BFEA208141
+Entry address(es): 
+  IP address: 10.225.44.86
+Platform: Cisco IP Phone 7942,  Capabilities: Host Phone 
+Interface: FastEthernet0/7,  Port ID (outgoing port): Port 1
+Holdtime : 160 sec
+
+Version :
+SCCP42.9-4-2SR3-1S
+
+advertisement version: 2
+Duplex: full
+Power drawn: 6.300 Watts
+Power request id: 33089, Power management id: 3
+Power request levels are:6300 0 0 0 0 
+Management address(es): 
+
+-------------------------
+Device ID: SEP001B54CAB265
+Entry address(es): 
+  IP address: 10.225.44.225
+Platform: Cisco IP Phone 7941,  Capabilities: Host Phone 
+Interface: FastEthernet0/8,  Port ID (outgoing port): Port 1
+Holdtime : 176 sec
+
+Version :
+SCCP41.9-4-2SR3-1S
+
+advertisement version: 2
+Duplex: full
+Power drawn: 6.300 Watts
+Power request id: 45669, Power management id: 3
+Power request levels are:6300 0 0 0 0 
+Management address(es): 
+
+-------------------------
+Device ID: SEP001B5494D985
+Entry address(es): 
+  IP address: 10.225.44.183
+Platform: Cisco IP Phone 7941,  Capabilities: Host Phone 
+Interface: FastEthernet0/38,  Port ID (outgoing port): Port 1
+Holdtime : 151 sec
+
+Version :
+SCCP41.9-4-2SR3-1S
+
+advertisement version: 2
+Duplex: full
+Power drawn: 6.300 Watts
+Power request id: 55685, Power management id: 3
+Power request levels are:6300 0 0 0 0 
+Management address(es): 
+
+-------------------------
+Device ID: SEP001B5494F433
+Entry address(es): 
+  IP address: 10.225.45.104
+Platform: Cisco IP Phone 7941,  Capabilities: Host Phone 
+Interface: FastEthernet0/10,  Port ID (outgoing port): Port 1
+Holdtime : 173 sec
+
+Version :
+SCCP41.9-4-2SR3-1S
+
+advertisement version: 2
+Duplex: full
+Power drawn: 6.300 Watts
+Power request id: 62515, Power management id: 3
+Power request levels are:6300 0 0 0 0 
+Management address(es): 
+
+-------------------------
+Device ID: SEP501CB00C25B9
+Entry address(es): 
+  IP address: 10.137.163.57
+Platform: Cisco IP Phone 8845,  Capabilities: Host Phone 
+Interface: FastEthernet0/37,  Port ID (outgoing port): Port 1
+Holdtime : 141 sec
+
+Version :
+sip8845_65.11-7-1-17.loads
+
+advertisement version: 2
+Duplex: full
+Power drawn: 6.427 Watts
+Power request id: 47398, Power management id: 3
+Power request levels are:6427 0 0 0 0 
+Management address(es): 
+
+-------------------------
+Device ID: SEP64D814A45DF2
+Entry address(es): 
+  IP address: 10.225.45.2
+Platform: Cisco IP Phone 7942,  Capabilities: Host Phone 
+Interface: FastEthernet0/4,  Port ID (outgoing port): Port 1
+Holdtime : 143 sec
+
+Version :
+SCCP42.9-4-2SR3-1S
+
+advertisement version: 2
+Duplex: full
+Power drawn: 6.300 Watts
+Power request id: 24050, Power management id: 3
+Power request levels are:6300 0 0 0 0 
+Management address(es): 
+
+-------------------------
+Device ID: iss-gle-lwap0-1.tpgi.com.au
+Entry address(es): 
+  IP address: 10.224.44.78
+  IPv6 address: FE80::8A5A:92FF:FE68:44E2  (link-local)
+Platform: cisco AIR-CAP3602I-Z-K9,  Capabilities: Trans-Bridge Source-Route-Bridge IGMP 
+Interface: FastEthernet0/46,  Port ID (outgoing port): GigabitEthernet0
+Holdtime : 145 sec
+          
+Version :
+Cisco IOS Software, C3600 Software (AP3G2-K9W8-M), Version 15.3(3)JC6, RELEASE SOFTWARE (fc2)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2017 by Cisco Systems, Inc.
+Compiled Tue 14-Mar-17 15:32 by prod_rel_team
+
+advertisement version: 2
+Duplex: full
+Power drawn: 15.400 Watts
+Power request id: 43119, Power management id: 3
+Power request levels are:15400 13000 0 0 0 
+Management address(es): 
+  IP address: 10.224.44.78
+
+-------------------------
+Device ID: iss-gle-lwap0-3.tpgi.com.au
+Entry address(es): 
+  IP address: 10.224.44.236
+  IPv6 address: FE80::8A5A:92FF:FE88:BCCA  (link-local)
+Platform: cisco AIR-CAP3602I-Z-K9,  Capabilities: Trans-Bridge Source-Route-Bridge IGMP 
+Interface: FastEthernet0/30,  Port ID (outgoing port): GigabitEthernet0
+Holdtime : 178 sec
+
+Version :
+Cisco IOS Software, C3600 Software (AP3G2-K9W8-M), Version 15.3(3)JC6, RELEASE SOFTWARE (fc2)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2017 by Cisco Systems, Inc.
+Compiled Tue 14-Mar-17 15:32 by prod_rel_team
+
+advertisement version: 2
+Duplex: full
+Power drawn: 15.400 Watts
+Power request id: 4743, Power management id: 3
+Power request levels are:15400 13000 0 0 0 
+Management address(es): 
+  IP address: 10.224.44.236
+
+-------------------------
+Device ID: AUSYDgle30L1DCSW1
+Entry address(es): 
+  IP address: 110.44.165.211
+Platform: cisco WS-C4506,  Capabilities: Router Switch IGMP 
+Interface: GigabitEthernet0/1,  Port ID (outgoing port): GigabitEthernet3/5
+Holdtime : 169 sec
+
+Version :
+Cisco Internetwork Operating System Software 
+IOS (tm) Catalyst 4000 L3 Switch Software (cat4000-I9S-M), Version 12.2(18)EW, EARLY DEPLOYMENT RELEASE SOFTWARE (fc1)
+TAC Support: http://www.cisco.com/tac
+Copyright (c) 1986-2004 by cisco Systems, Inc.
+Compiled Fri 30-Jan-04 02:04 by hqluong
+
+advertisement version: 2
+VTP Management Domain: ''''
+Native VLAN: 500
+Duplex: full
+Management address(es): 
+
+-------------------------
+Device ID: AUSYDgle30L1DCSW2
+Entry address(es): 
+  IP address: 110.44.165.212
+Platform: cisco WS-C4506,  Capabilities: Router Switch IGMP 
+Interface: GigabitEthernet0/2,  Port ID (outgoing port): GigabitEthernet3/5
+Holdtime : 124 sec
+
+Version :
+Cisco Internetwork Operating System Software 
+IOS (tm) Catalyst 4000 L3 Switch Software (cat4000-I9S-M), Version 12.2(18)EW, EARLY DEPLOYMENT RELEASE SOFTWARE (fc1)
+TAC Support: http://www.cisco.com/tac
+Copyright (c) 1986-2004 by cisco Systems, Inc.
+Compiled Fri 30-Jan-04 02:04 by hqluong
+
+advertisement version: 2
+VTP Management Domain: ''''
+Native VLAN: 500
+Duplex: full
+Management address(es): 
+
+AUSYDgle30L0SW7#
+AUSYDgle30L0SW7#show running-config 
+Building configuration...
+
+Current configuration : 36365 bytes
+!
+! Last configuration change at 01:52:37 UTC Mon Mar 19 2018 by t5865546
+! NVRAM config last updated at 01:52:46 UTC Mon Mar 19 2018 by t5865546
+!
+version 12.2
+no service pad
+service tcp-keepalives-in
+service tcp-keepalives-out
+service timestamps debug datetime msec show-timezone
+service timestamps log datetime msec show-timezone
+service password-encryption
+!
+hostname AUSYDgle30L0SW7
+!
+logging buffered 16384 debugging
+no logging console
+enable secret 5 $1$r3i4$3oVeuaSmaoGiyuWQE1csI.
+!
+username itopsuser password 7 011207144F05180635435E1A
+aaa new-model
+aaa authentication login MGMT_AUTHENTICATION group tacacs+ local
+aaa authentication enable default group tacacs+ enable
+aaa authorization exec default group tacacs+ if-authenticated 
+aaa authorization commands 15 default group tacacs+ if-authenticated 
+aaa accounting delay-start 
+aaa accounting update periodic 120
+aaa accounting exec default start-stop group tacacs+
+aaa accounting commands 1 default start-stop group tacacs+
+aaa accounting commands 15 default start-stop group tacacs+
+aaa accounting connection default start-stop group tacacs+
+aaa accounting system default start-stop group tacacs+
+!
+aaa session-id common
+vtp mode transparent
+ip subnet-zero
+no ip source-route
+ip telnet source-interface Vlan500
+no ip domain-lookup
+!
+ip dhcp snooping
+ip tftp source-interface Vlan500
+!
+mls qos map cos-dscp 0 8 18 26 34 46 48 56
+mls qos srr-queue output cos-map queue 1 threshold 3  5
+mls qos srr-queue output cos-map queue 2 threshold 1  2
+mls qos srr-queue output cos-map queue 2 threshold 2  3 4
+mls qos srr-queue output cos-map queue 2 threshold 3  6 7
+mls qos srr-queue output cos-map queue 3 threshold 3  0
+mls qos srr-queue output cos-map queue 4 threshold 3  1
+mls qos srr-queue output dscp-map queue 1 threshold 3  40 41 42 43 44 45 46 47
+mls qos srr-queue output dscp-map queue 2 threshold 1  16 17 18 19 20 21 22 23
+mls qos srr-queue output dscp-map queue 2 threshold 1  32 33 34 35 36 37 38 39
+mls qos srr-queue output dscp-map queue 2 threshold 2  24 25 26 27 28 29 30 31
+mls qos srr-queue output dscp-map queue 2 threshold 3  48 49 50 51 52 53 54 55
+mls qos srr-queue output dscp-map queue 2 threshold 3  56 57 58 59 60 61 62 63
+mls qos srr-queue output dscp-map queue 3 threshold 3  0 1 2 3 4 5 6 7
+mls qos srr-queue output dscp-map queue 3 threshold 3  9 10 11 12 13 14 15
+mls qos srr-queue output dscp-map queue 4 threshold 3  8
+mls qos queue-set output 1 threshold 1 100 100 100 100
+mls qos queue-set output 1 threshold 2 150 300 100 800
+mls qos queue-set output 1 threshold 3 300 300 50 1600
+mls qos queue-set output 1 threshold 4 800 800 50 3200
+mls qos queue-set output 1 buffers 10 50 30 10
+mls qos
+!
+!
+!
+!
+errdisable recovery cause link-flap
+no file verify auto
+!
+spanning-tree mode pvst
+spanning-tree portfast bpduguard default
+no spanning-tree optimize bpdu transmission
+spanning-tree extend system-id
+spanning-tree uplinkfast
+!         
+vlan internal allocation policy ascending
+!
+vlan 90
+ name VANTAGE_VIDEO_CONF_SPECIAL
+!
+vlan 133 
+!
+vlan 134
+ name IDNDATA_GLE_GndFlr_StackC
+!
+vlan 163
+ name IDNVOICE_GROUND_2
+!
+vlan 183,185 
+!
+vlan 300
+ name TPG_Data_44
+!
+vlan 310
+ name TPG_Voice_44
+!
+vlan 362
+ name TPG_IINET_WAN_VLAN362
+!
+vlan 363
+ name TPG_IINET_DATA_VLAN363
+!
+vlan 364
+ name TPG_IINET_VOICE_VLAN364
+!
+vlan 365
+ name TPG_IINET_WLAN_AP_VLAN365
+!
+vlan 400
+ name TPGPIPE_DATA_VLAN400
+!
+vlan 401
+ name TPG_DATA_VLAN401
+!         
+vlan 402
+ name TPGPIPE_VIDEOCONF_VLAN402
+!
+vlan 410
+ name TPGPIPE_VOICE_VLAN410
+!
+vlan 411
+ name TPG_VOICE_VLAN411
+!
+vlan 500
+ name NETWORK_MANAGEMENT
+!
+vlan 999
+ name PARKED_PORTS
+!
+class-map match-all Voice-RTP
+  match ip dscp ef 
+class-map match-all Media-Signalling
+  match ip dscp 44 
+class-map match-any HOSTED-VOICE-RTP-CLASS
+  match access-group name HOSTED-VOICE-RTP-ACL
+class-map match-any HOSTED-VOICE-CONTROL-CLASS
+  match access-group name HOSTED-VOICE-CONTROL-ACL
+!
+!
+policy-map IVDN-ACCESS-PORT-INPUT-POLICY
+  class HOSTED-VOICE-RTP-CLASS
+   set dscp ef
+  class HOSTED-VOICE-CONTROL-CLASS
+   set dscp af31
+  class class-default
+   set dscp default
+policy-map COE-client
+  class Voice-RTP
+    trust dscp
+  class Media-Signalling
+   set dscp af31
+  class class-default
+   set dscp af11
+!
+!
+interface FastEthernet0/1
+ description USER-TPG USER AND AAPT PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 163
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/2
+ description USER: TPG USER AND PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 410
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/3
+ description USER-TPG USER AND IINET PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 364
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/4
+ description USER-TPG USER AND PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 410
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/5
+ description USER-TPG USER AND PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 410
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/6
+ description USER-TPG USER AND AAPT PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 163
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/7
+ description USER-TPG USER AND PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 410
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/8
+ description USER: TPG USER AND PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 410
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/9
+ description USER: TPG USER AND PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 410
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/10
+ description USER-TPG USER AND PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 410
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/11
+ description USER-TPG USER AND PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 410
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/12
+ description USER-TPG USER AND PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 410
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/13
+ description USER-TPG USER AND PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 410
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/14
+ description USER-IINET USER AND AAPT PHONE
+ switchport access vlan 363
+ switchport mode access
+ switchport voice vlan 163
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/15
+ description USER-TPG USER AND PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 410
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/16
+ description USER-TPG USER AND PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 410
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/17
+ description USER-TPG USER AND AAPT PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 163
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ load-interval 30
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/18
+ description USER: TPG USER AND PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 410
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/19
+ description USER-TPG USER AND PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 410
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/20
+ description USER-TPG USER AND PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 410
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/21
+ description USER-TPG USER AND PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 410
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/22
+ description USER-TPG USER AND PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 410
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/23
+ description USER-TPG USER AND PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 410
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/24
+ description LIZARD ISLAND VC
+ switchport access vlan 410
+ switchport mode access
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/25
+ description USER: TPG USER AND PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 410
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/26
+ description USER-TPG USER AND PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 410
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/27
+ description USER-TPG USER AND AAPT PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 163
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/28
+ description USER-TPG USER AND PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 410
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/29
+ description USER-TPG USER AND PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 410
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/30
+ description USER-TPG USER AND IINET PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 364
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/31
+ description USER-TPG USER AND AAPT PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 163
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/32
+ description USER-TPG USER AND PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 410
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/33
+ description USER-TPG USER AND AAPT PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 163
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/34
+ description USER-TPG USER AND AAPT PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 163
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/35
+ description USER-TPG USER AND PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 410
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/36
+ description USER-TPG USER AND PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 410
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/37
+ description USER-TPG USER AND AAPT PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 163
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/38
+ description USER: TPG USER AND PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 410
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/39
+ description SRVR-Vantage Video Codec
+ switchport access vlan 90
+ switchport mode access
+ switchport voice vlan 163
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ speed 100
+ duplex full
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/40
+ description USER-TPG USER AND PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 410
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/41
+ description USER-TPG USER AND PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 163
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/42
+ description USER-TPG USER AND PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 410
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/43
+ description USER-TPG USER AND PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 410
+ switchport port-security maximum 7
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/44
+ description USER-TPG USER AND PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 410
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/45
+ description USER-TPG USER AND PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 410
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/46
+ description USER-TPG USER AND IINET PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 364
+ switchport port-security maximum 3
+ switchport port-security
+ switchport port-security aging time 5
+ switchport port-security violation restrict
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no snmp trap link-status
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/47
+ description USER-TPG USER AND AAPT PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 163
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no mdix auto
+ spanning-tree portfast
+!
+interface FastEthernet0/48
+ description USER-TPG USER AND AAPT PHONE
+ switchport access vlan 400
+ switchport mode access
+ switchport voice vlan 163
+ service-policy input IVDN-ACCESS-PORT-INPUT-POLICY
+ no logging event power-inline-status
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ no mdix auto
+ spanning-tree portfast
+!         
+interface GigabitEthernet0/1
+ description LINK-To AUSYDgle30L1DCSW1 Gi3/5
+ switchport access vlan 500
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 500
+ switchport trunk allowed vlan 90,134,163,182,183,185,300,310,362-365,400-402
+ switchport trunk allowed vlan add 410,411,500
+ switchport mode trunk
+ switchport nonegotiate
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ udld port aggressive
+ mls qos trust dscp
+ ip dhcp snooping trust
+!
+interface GigabitEthernet0/2
+ description LINK-To AUSYDgle30L1DCSW2 Gi3/5
+ switchport access vlan 500
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 500
+ switchport trunk allowed vlan 90,134,163,182,183,185,300,310,362-365,400-402
+ switchport trunk allowed vlan add 410,411,500
+ switchport mode trunk
+ switchport nonegotiate
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ udld port aggressive
+ mls qos trust dscp
+ ip dhcp snooping trust
+!
+interface GigabitEthernet0/3
+ description FREE-
+ switchport access vlan 999
+ shutdown
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ mls qos trust dscp
+!
+interface GigabitEthernet0/4
+ description FREE-
+ switchport access vlan 999
+ shutdown
+ srr-queue bandwidth share 1 70 25 5
+ srr-queue bandwidth shape  10  0  0  0 
+ priority-queue out 
+ mls qos trust dscp
+!
+interface Vlan1
+ no ip address
+ no ip route-cache
+ shutdown
+!
+interface Vlan500
+ description NETWORK_MANAGEMENT
+ ip address 10.137.128.37 255.255.255.128
+ no ip redirects
+ no ip unreachables
+ no ip proxy-arp
+ no ip route-cache
+!
+ip local policy route-map LOCALLY-GENERATED-TRAFFIC-QOS-MAP
+ip default-gateway 10.137.128.1
+ip classless
+no ip http server
+ip http secure-server
+!
+ip access-list extended HOSTED-VOICE-CONTROL-ACL
+ remark >> Private hosted voice multimedia control traffic (SIP, MGCP)
+ permit udp 10.137.160.0 0.0.15.255 any eq 5060
+ permit udp 10.137.160.0 0.0.15.255 any eq 2727
+ permit udp 10.137.160.0 0.0.15.255 any eq 2427
+ip access-list extended HOSTED-VOICE-RTP-ACL
+ remark >>> Private hosted voice real-time audio traffic
+ permit udp 10.137.160.0 0.0.15.255 gt 1023 any gt 1023
+!         
+logging facility local4
+logging 203.131.52.9
+access-list 50 remark ** Telnet access **
+access-list 50 permit 172.20.1.0 0.0.0.255
+access-list 50 permit 146.171.24.0 0.0.0.255
+access-list 50 permit 10.49.212.224 0.0.0.31
+access-list 50 permit 10.96.2.224 0.0.0.31
+access-list 50 permit 10.137.1.0 0.0.0.255
+access-list 50 deny   any log
+access-list 50 remark ** Telnet access **
+access-list 50 permit 10.137.185.0 0.0.0.255
+access-list 50 permit 10.137.128.0 0.0.0.255
+access-list 50 permit 10.137.27.0 0.0.0.255
+access-list 50 permit 10.143.255.0 0.0.0.255
+access-list 51 deny   any log
+access-list 51 remark ** Deny outbound telnet **
+access-list 51 remark ** Deny outbound via console port**
+access-list 52 remark **SNMP RO and RW access**
+access-list 52 permit 203.131.52.0 0.0.0.255
+access-list 52 permit 10.129.240.208 0.0.0.15
+access-list 52 permit 10.143.21.0 0.0.0.255
+access-list 52 deny   any log
+route-map LOCALLY-GENERATED-TRAFFIC-QOS-MAP permit 10
+ match interface Vlan500
+ set ip precedence immediate
+!
+snmp-server community aaptn-idn RO 52
+snmp-server community AAPT-IDN RO 52
+snmp-server community aaptn-idnrw RW 52
+snmp-server trap-source Vlan500
+snmp-server location LATITUDE SYDNEY L25
+snmp-server contact EDS Helpdesk 1800 357 597
+snmp-server chassis-id Glebe_RossStreet_GroundFloorCommsRoom_SW7
+snmp-server system-shutdown
+snmp-server enable traps snmp linkdown linkup coldstart warmstart
+snmp-server enable traps tty
+snmp-server enable traps entity
+snmp-server enable traps vlancreate
+snmp-server enable traps vlandelete
+snmp-server enable traps envmon fan shutdown supply temperature status
+snmp-server host 203.131.52.10 aaptn-idn 
+tacacs-server host 203.131.52.6 key 7 08184B184F4F371115351C
+tacacs-server host 203.131.52.134 key 7 033D5C5D4059134A493709
+tacacs-server directed-request
+radius-server source-ports 1645-1646
+!
+control-plane
+!
+banner exec ^CC
+************************************************
+*                    NOTICE:                   *
+*                                              *
+*      30 ROSS STREET Glebe, Ground Floor      *
+*                                              *
+*                room 01.12                    *
+*                                              *
+*     All changes must comply with the AAPT    *
+*                Change Policy                 *
+*                                              *
+*                                              *
+************************************************
+^C
+banner motd ^CC
+*************************************************************
+*                                                           *
+*  (1) It is an offence under Australian law to attempt     *
+*      to gain unauthorised access to computer systems.     *
+*                                                           *
+*  (2) All actions on this device are monitored and logged. *
+*                                                           *
+*  (3) By accessing this device, you expressly consent to   *
+*      having your activity monitored and logged.           *
+*                                                           *
+*  Access to this system is restricted solely to authorised *
+*  Telecom Personnel.                                       *
+*                                                           *
+*        UNAUTHORISED access is STRICTLY PROHIBITED.        *
+*               VIOLATORS MAY BE PROSECUTED.                *
+*                                                           *
+*************************************************************
+^C
+!
+line con 0
+ access-class 51 out
+ logging synchronous
+ login authentication MGMT_AUTHENTICATION
+ stopbits 1
+line vty 0 4
+ session-timeout 10 
+ exec-timeout 60 0
+ logging synchronous
+ login authentication MGMT_AUTHENTICATION
+ length 0
+line vty 5 15
+ session-timeout 10 
+ exec-timeout 60 0
+ logging synchronous
+ login authentication MGMT_AUTHENTICATION
+!
+!
+monitor session 1 source interface Fa0/33
+monitor session 1 destination interface Fa0/48
+ntp clock-period 36029251
+ntp server 10.137.1.3
+ntp server 10.137.1.2 prefer
+end
+
+AUSYDgle30L0SW7#  

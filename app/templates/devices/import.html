@@ -30,19 +30,21 @@
         <div class="row" style="margin-top:10px;">
           <!-- data section such as file uploads or text -->
           <div class="col">
-              <!--
-              <input type="file" name="file" id="uplodFileButton"/>
-              <button ng-click='initConfigImport()'> load </button>
-              -->
-              <form method=POST enctype=multipart/form-data action="http://192.168.64.128:9000/api/misc/upload">
-                <input type=file name=device_config_file>
-                <input type=submit value=Upload>
-              </form>
-              
+            <!-- File uploading form -->             
+            <form>
+              <input add-File type=file name=device_config_file>
+              <!--<input ng-click="UploadButton($event)" type=submit value=Upload>-->
+            </form>
+            <!-- Text input area -->
+            <textarea class="form-control" rows="3" ng-model="device_node_model.config.text[0]" 
+                      aria-label="Notes"></textarea>        
           </div>
           <!-- TTP teplates section -->
           <div class="col">
-            choose ttp template
+            <md-select ng-model="device_node_model.ttp_template" placeholder="TTP template" 
+                       class="md-no-underline" style="margin: 0px;">
+              <md-option ng-repeat="ttp_template in ttp_templates" ng-value="ttp_template">{{ ttp_template }}</md-option>
+            </md-select>
           </div>          
           <!-- parsing results section -->
           <div class="col">

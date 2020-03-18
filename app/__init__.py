@@ -33,14 +33,8 @@ app.register_blueprint(home_blueprint)
 from .devices import devices as devices_blueprint
 app.register_blueprint(devices_blueprint)
 
-from .tools.data_import import tools_import as tools_import_blueprint
-app.register_blueprint(tools_import_blueprint)
-
 from .auth import auth as auth_blueprint
 app.register_blueprint(auth_blueprint)
-
-from .tools.ttp_parser import ttp_parser_dash_app
-ttp_parser_dash_app.init_app(app=app)
 
 from .api import api as api_blueprint
 app.register_blueprint(api_blueprint)

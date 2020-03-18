@@ -2,10 +2,13 @@ from flask import url_for, jsonify, request, g, abort
 from flask_login import login_required, current_user
 from app.api.auth import token_auth
 from py2neo import Graph, Node, Relationship, NodeMatcher
+import os
 
 from . import api
 from . import errors
 from .structs import devices as devices_struct
+from app import app
+from .ttp_parser import run as ttp_parser_run
 
 # initiate graph
 graph = None
@@ -13,7 +16,9 @@ node_matcher = None
 def get_graph():
     global graph
     global node_matcher
-    graph = Graph(host="192.168.64.128", password="Kotr5rik", username="neo4j")
+    graph = Graph(host=app.config["NEO4J_SERVER_IP"], 
+                  password=app.config["NEO4J_SERVER_PASSWORD"], 
+                  username=app.config["NEO4J_SERVER_USER"])
     node_matcher = NodeMatcher(graph)
 
 @api.route('/api/devices', methods=['GET'])
@@ -141,7 +146,7 @@ def import_devices():
     if data:
         if graph is None:
             get_graph()
-        # add devices' nodes to Graph Database
+        # add devices' nodes to Graph Database from csv data
         if data["csv"]["nodes"]:
             nodes = []
             headers = []
@@ -166,6 +171,30 @@ def import_devices():
                 # add device to graph
                 graph.merge(device_node, "Device", "hostname")
                 ret["Message"] += "device created successfully: {}; ".format(node["hostname"])
+        # import data from config text
+        if data["config"]["text"][0].strip():
+            pass
+        # import data from configuration files
+        if data["config"]["files"]:
+            UPLOAD_FOLDER = os.path.join(app.config["BASEDIR"], 'app/upload_folder/')
+            #load ttp template
+            if not data["ttp_template"].strip(): 
+                ret["Message"] += "Error: No TTP template selected"
+                return jsonify(ret)
+            ttp_template_filepath = os.path.join(UPLOAD_FOLDER, "ttp_templates", data["ttp_template"])
+            with open(ttp_template_filepath) as ttp_file:
+                ttp_template_data = ttp_file.read()
+            parser = ttp(template=ttp_template_data)
+            # parse file items with TTP
+            for item in data["config"]["files"]:
+                data_file_path = os.path.join(UPLOAD_FOLDER, "device_configurations", item["fileName"])
+                with open(data_file_path) as data_file:
+                    filedata = data_file.read()
+                parser.set_input(data=filedata)
+                parser.parse()
+                parsing_results = parser.result(format="pprint")[0]
+                ret["Message"] += "Loaded file: {}, size: {} characters, parsing results: {};".format(
+                    data_file_path, len(filedata), parsing_results)
     return jsonify(ret)
 
 
