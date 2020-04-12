@@ -25,7 +25,7 @@ migrate = Migrate(app, db)
 from app import models
 
 # add Bootstrap support to app
-# Bootstrap(app)
+Bootstrap(app)
 
 from .home import home as home_blueprint
 app.register_blueprint(home_blueprint)
